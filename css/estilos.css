@@ -19,5 +19,24 @@ nav li {
   margin-top: 0;
   padding: 10px;
   background-color: #ddd;
-}
+  }
 
+    header
+            body {
+                font-family: arial, sans-serif;
+            }
+            h1 {
+                font-size: 2em;
+                text-align: left;
+            }
+            aside {
+                width: 15%;
+                padding-left: 15px;
+                margin-left: 15px;
+                float: right;
+                font-style: italic;
+                background-color: lightgreen;
+                /* Add the following properties to lift the text */
+                margin-top: -560px; /* Adjust the value as needed */
+                padding-top: 10px; /* Adjust the value as needed */
+              } 
