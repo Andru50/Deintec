@@ -35,7 +35,7 @@ nav li {
                 margin-left: 15px;
                 float: right;
                 font-style: italic;
-                background-color: lightgreen;
+                background-color: rgb(21, 235, 21);
                 /* Add the following properties to lift the text */
                 margin-top: -560px; /* Adjust the value as needed */
                 padding-top: 10px; /* Adjust the value as needed */
