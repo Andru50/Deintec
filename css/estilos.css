@@ -39,4 +39,36 @@ nav li {
                 /* Add the following properties to lift the text */
                 margin-top: -560px; /* Adjust the value as needed */
                 padding-top: 10px; /* Adjust the value as needed */
-              } 
+              }
+
+         /* Estilos CSS (pie de pagina) */
+         footer {
+         background-color: rgb(168, 11, 11);
+          padding: 20px;
+            }
+
+                    .container {
+                max-width: 1200px;
+                 margin: 0 auto;
+                }
+
+                .row {
+               display: flex;
+               justify-content: space-between;
+                }
+
+               .column {
+                width: 60%;
+                }
+
+                .social-icons li {
+                 display: inline-block;
+                 margin-right: 40px;
+               }
+
+               .copyright {
+               text-align: center;
+                margin-top: 20px;
+                }
+
+
