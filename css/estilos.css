@@ -15,6 +15,7 @@ nav a{
 }
 nav li {
   display: inline-block;
+  
   margin-left: 210px;
   margin-top: 0;
   padding: 10px;
