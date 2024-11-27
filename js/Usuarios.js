@@ -1,12 +1,9 @@
 {
     {"employess"}
     
-        "nombre" ,
+        "Nombre" ,
         "Apellido",
-        
-    
-
+        "email"
 }
-
 key:value
 atrubuto: valor
