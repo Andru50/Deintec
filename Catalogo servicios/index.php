@@ -21,7 +21,7 @@ $conexion = new mysqli($servidor, $usuario, $password, $baseDatos);
             </div>
             <button type="submit" class="btn btn-primary">Crear Categoría</button>
         </form>
-        <?php
+<?php
         if (isset($_GET['message'])) {
             echo '<div class="alert alert-info mt-4">' . htmlspecialchars($_GET['message']) . '</div>';
         }
