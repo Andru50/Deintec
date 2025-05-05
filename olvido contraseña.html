@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olvido de Contraseña</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Recuperación de Contraseña</h1>
+        <div style="text-align: right;">
+            <img src="imagen/deintec-imagen.png" alt="Deintec" width="250" height="80">
+        </div>
+    </header>
+
+    <section>
+        <h2>Formulario de Recuperación</h2>
+        <form action="procesar_recuperacion.php" method="POST">
+            <!-- Confirmación de segundo apellido -->
+            <label for="segundo_apellido">Segundo Apellido:</label>
+            <input type="text" id="segundo_apellido" name="segundo_apellido" placeholder="Ingrese su segundo apellido" required>
+            <br><br>
+
+            <!-- Últimos números de teléfono -->
+            <label for="telefono">Últimos 4 dígitos de su Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" placeholder="Ingrese los últimos 4 dígitos" maxlength="4" required>
+            <br><br>
+
+            <!-- Nombre de mascota -->
+            <label for="mascota">Nombre de su Mascota:</label>
+            <input type="text" id="mascota" name="mascota" placeholder="Ingrese el nombre de su mascota" required>
+            <br><br>
+
+            <!-- Persona favorita -->
+            <label for="persona_favorita">Persona Favorita (Familiar o Amigo):</label>
+            <input type="text" id="persona_favorita" name="persona_favorita" placeholder="Ingrese el nombre de su persona favorita" required>
+            <br><br>
+
+            <!-- Nueva contraseña -->
+            <label for="nueva_contrasena">Nueva Contraseña:</label>
+            <input type="password" id="nueva_contrasena" name="nueva_contrasena" placeholder="Ingrese su nueva contraseña" required>
+            <br><br>
+
+            <!-- Confirmación de nueva contraseña -->
+            <label for="confirmar_contrasena">Confirmar Nueva Contraseña:</label>
+            <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" placeholder="Confirme su nueva contraseña" required>
+            <br><br>
+
+            <!-- Botón de recuperación -->
+            <button type="submit">Recuperar Contraseña</button>
+        </form>
+    </section>
+</body>
+</html>

@@ -4,37 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css"/>
-    <title>Document</title>
-        <body>
-    <h1>instalacion</h1>
-        <body>
-        <div style="text-align: right;">
-        <img src="imagen/deintec-imagen.png"alt=""width=350 height="100">
-        </div>
-        </body> 
+    <title>Instalacion herramienta</title>
 
-        <nav>
-          <ul>
-              <li><a href="catalogo.html">Home</a></li>
-              <li><a href="#">Nosotros</a></li>
-              <li><a href="Instalacion.html">instalacion</a></li>
-          </ul>
-      </nav>
-        
-</header>
-<nav>
-Tipo de solicitud 
-</nav>
-<nav class="nav-menu">
-<ul>
-  <li><a href="DEINTEC WEB.html"> Home</a></li>
-  <li><a href="#">Falla de sistema</a></li>
-  <li><a href="#">mantenimiento</a></li>
-  <li><a href="#">instalacion</a></li>
-</ul>
+</head>
+    <nav>
+        Solicitud Instalacion de Herramientas
+    </nav> 
+<div style="text-align: center;">
+  <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
+</div>
+<body>
+    <h1>Instalación de Herramientas PC</h1>
+    <nav>
+        <ul>
+            <li><a href="catalogo.html">Home</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="Instalacion.html">Instalación</a></li>
+        </ul>
+    </nav>
 
-<div></div> 
-<div></div>
-<div></div>  
+    <section>
+        <h2>Formulario de Instalación</h2>
+        <form action="procesar_instalacion.php" method="POST" enctype="multipart/form-data">
+            <!-- Tipo -->
+            <label for="tipo">Tipo de Herramienta:</label>
+            <select id="tipo" name="tipo" required>
+                <option value="software">Software</option>
+                <option value="hardware">Hardware</option>
+                <option value="otro">Otro</option>
+            </select>
+            <br><br>
+
+            <!-- Descripción -->
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" rows="15" cols="190" placeholder="Describe la herramienta o instalación requerida..." required></textarea>
+            <br><br>
+
+            <!-- Métodos de contacto -->
+            <label for="contacto">Métodos de Contacto:</label>
+            <input type="email" id="contacto" name="contacto" placeholder="Correo electrónico" required>
+            <br><br>
+
+            <!-- Subir imagen -->
+            <label for="imagen">Subir Imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*">
+            <br><br>
+
+            <!-- Botón de registro -->
+            <button type="submit">Registrar</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Confirmación de Número de Radicado</h2>
+        <form action="confirmar_radicado.php" method="POST">
+            <label for="radicado">Número de Radicado:</label>
+            <input type="text" id="radicado" name="radicado" placeholder="Ingrese su número de radicado" required>
+            <br><br>
+            <button type="submit">Confirmar</button>
+        </form>
+    </section>
 </body>
 </html>

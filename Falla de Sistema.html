@@ -4,36 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css"/>
-    <title>Document</title>
-        <body>
-    <h1>Fallas_de_sistema</h1>
-        <body>
-        <div style="text-align: right;">
-        <img src="imagen/deintec-imagen.png"alt=""width=350 height="100">
-        </div>
-        </body> 
-        <nav>
-          <ul>
-              <li><a href="catalogo.html">Home</a></li>
-              <li><a href="#">Nosotros</a></li>
-              <li><a href="Falla de Sistema.html">Fallas_de_sistema</a></li>
-          </ul>
-      </nav>
-   
-</header>
+    <title>Falla de sistema</title>
+        
+</head>
 <nav>
-Tipo de solicitud 
-</nav>
-<nav class="nav-menu">
-<ul>
-  <li><a href="DEINTEC WEB.html"> Home</a></li>
-  <li><a href="#">Falla de sistema</a></li>
-  <li><a href="#">mantenimiento</a></li>
-  <li><a href="#">instalacion</a></li>
-</ul>
+    Falla de sistema
+</nav> 
+<div style="text-align: center;">
+  <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
+</div>
+<body>
+    <section>
+        <h2>Reporte de Falla de Sistema de PC</h2>
+        <form action="procesar_falla.php" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="tipo_falla">Tipo de Falla:</label>
+                <select id="tipo_falla" name="tipo_falla" required>
+                    <option value="">Seleccione un tipo de falla</option>
+                    <option value="hardware">Falla de Hardware</option>
+                    <option value="software">Falla de Software</option>
+                    <option value="red">Falla de Red</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div>
+                <label for="descripcion">Descripción de la Falla:</label>
+                <textarea id="descripcion" name="descripcion" rows="15" cols="190"  required></textarea>
+            </div>
+            <div>
+                <label>Métodos de Contacto:</label>
+                <div>
+                    <input type="checkbox" id="contacto_email" name="contacto[]" value="email">
+                    <label for="contacto_email">Correo Electrónico</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="contacto_telefono" name="contacto[]" value="telefono">
+                    <label for="contacto_telefono">Teléfono</label>
+                </div>
+            </div>
+            <div>
+                <label for="imagen">Subir Imagen (opcional):</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*">
+            </div>
+            <button type="submit">Registrar Falla</button>
+        </form>
 
-<div></div> 
-<div></div>
-<div></div>  
+        <div id="confirmacion_radicado" style="display:none;">
+            <h3>Número de Radicado:</h3>
+            <p id="numero_radicado"></p>
+        </div>
+    </section>
+
+    <footer>
+        </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío automático del formulario por ahora
+
+            // Aquí iría la lógica para enviar los datos al servidor (AJAX)
+            // Simulamos una respuesta exitosa y mostramos el número de radicado
+            const numeroRadicadoGenerado = Math.floor(Math.random() * 1000000); // Generar un número aleatorio como ejemplo
+
+            document.getElementById('numero_radicado').textContent = numeroRadicadoGenerado;
+            document.getElementById('confirmacion_radicado').style.display = 'block';
+            document.querySelector('form').style.display = 'none'; // Ocultar el formulario después del registro simulado
+        });
+    </script>
 </body>
 </html>

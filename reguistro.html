@@ -1,35 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css"/>
+    <title>Registro</title>
 </head>
+    <nav>
+    Reguistro de Usuario
+    </nav> 
 <body>
-    <h1>catalogo</h1>
-</body>
-</head>
-</nav>
-<div style="text-align: right;">
-    <img src="imagen/deintec-imagen.png" alt="Deintec" width="250" height="80"> 
-</div>
-</header>
-<nav>
-menu 
-</nav>
+    <nav>
+        <h1>Reguistro</h1>
+        <div style="text-align: right;">
+            <img src="imagen/deintec-imagen.png" alt="Deintec" width="250" height="80">
+        </div>
+        <div id="menu">
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Nombre Completo</a></li>
+                    <li><a href="#">Correo</a></li>
+                    <li><a href="#">Foto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
 
-</section>
-<select name="catalogo de servicios" id="menu"></select>
-<nav class="nav-menu">
-<ul>
-  <li><a href="#">Falla de sistema</a></li>
-  <li><a href="#">mantenimiento</a></li>
-  <li><a href="#">instalacion</a></li>
-</ul>
+    <section>
+        <h2>Registro de Usuario</h2>
+        <form action="procesar_registro.php" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="nombre_completo">Nombre Completo:</label>
+                <input type="text" id="nombre_completo" name="nombre_completo" required>
+            </div>
+            <div>
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+            <div>
+                <label for="confirmar_contrasena">Confirmar Contraseña:</label>
+                <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
+            </div>
+            <div>
+                <label for="foto">Subir Foto:</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+            </div>
+            <button type="submit">Registrarse</button>
+        </form>
+    </section>
 
-
-<div></div> 
-<div></div>
-<div></div>  
+    <footer>
+        </footer>
 </body>
 </html>
