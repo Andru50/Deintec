@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css"/>
-    <title>Falla de sistema</title>
-        
+    <title>Falla sistema solicitud</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
-<nav>
-    Falla de sistema
-</nav> 
-<div style="text-align: center;">
-  <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
-</div>
+<body>
+    <header>
+        
+        <div style="text-align: center;">
+            <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
+        </div>
+    </header>
+        <div id="menu">
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="DEINTEC WEB.html">Home</a></li>
+                    <li><a href="#">Formulario de solicitud</a></li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
 <body>
     <section>
         <h2>Reporte de Falla de Sistema de PC</h2>
+        <p>Por favor, diligenciar el siguiente formulario para registrar una falla de sistema en su PC con el fin de poder ayudarte.</p>
         <form action="procesar_falla.php" method="post" enctype="multipart/form-data">
             <div>
                 <label for="tipo_falla">Tipo de Falla:</label>
