@@ -3,60 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css"/>
+    <title>iniciar seccion</title>
 </head>
 <body>
     <header>
         <h1>Iniciar Sesión</h1>
-        <div style="text-align: right;">
-            <img src="imagen/deintec-imagen.png" alt="Deintec" width="250" height="80"> 
+        </nav> 
+        <div style="text-align: center;">
+    <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
         </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="DEINTEC WEB.html">Home</a></li>
-            <li><a href="catalogo.html">Catálogo</a></li>
-            <li><a href="perfil.html">Iniciar Sesión</a></li>
-        </ul>
-    </nav>
-
-    <section>
-        <h2>Formulario de Inicio de Sesión</h2>
-        <form action="procesar_sesion.php" method="POST" enctype="multipart/form-data">
-            <!-- Nombre completo -->
-            <label for="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre completo" required>
-            <br><br>
-
-            <!-- Correo -->
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico" required>
-            <br><br>
-
-            <!-- Método de contacto -->
-            <label for="contacto">Método de Contacto:</label>
-            <input type="text" id="contacto" name="contacto" placeholder="Teléfono o medio preferido" required>
-            <br><br>
-
-            <!-- Foto de perfil -->
-            <label for="foto">Foto de Perfil:</label>
-            <input type="file" id="foto" name="foto" accept="image/*">
-            <br><br>
-
-            <!-- Botón para actualizar datos -->
-            <button type="submit">Actualizar Datos</button>
-        </form>
-    </section>
-
-    <section>
-        <h2>Actualizar Imagen de Perfil</h2>
-        <form action="actualizar_imagen.php" method="POST" enctype="multipart/form-data">
-            <label for="nueva_foto">Nueva Foto de Perfil:</label>
-            <input type="file" id="nueva_foto" name="nueva_foto" accept="image/*" required>
-            <br><br>
-            <button type="submit">Actualizar Imagen</button>
-        </form>
-    </section>
-</body>
-</html>
+          </body> 
+  <nav class="nav-menu">
+        </div>
+        <input type="text" id="email" placeholder="Nombre de usuario o correo">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="signIn()">Iniciar sesión</button>
+        
+        <div id="popup" style="display:none; border: 1px solid black; padding: 20px; background-color: lightyellow;">
+            ¡Inicio de sesión exitoso!
+            <button onclick="closePopup()">Cerrar</button>
+        </div>
+        
+        <script>
+            const genericEmail = "usuario@generico.com"; // Replace with your desired generic email
+            const genericPassword = "contrasenaGenerica"; // Replace with your desired generic password
+            const popup = document.getElementById('popup');
+        
+            function signIn() {
+                const enteredEmail = document.getElementById('email').value;
+                const enteredPassword = document.getElementById('password').value;
+        
+                if (enteredEmail === genericEmail && enteredPassword === genericPassword) {
+                    // Simulate successful login
+                    console.log("Inicio de sesión exitoso (inseguro)");
+                    showPopup();
+                    // In a real application, you would typically set a session or token here.
+                } else {
+                    alert("Credenciales incorrectas");
+                }
+            }
+        
+            function showPopup() {
+                popup.style.display = 'block';
+            }
+        
+            function closePopup() {
+                popup.style.display = 'none';
+            }
+        </script>
