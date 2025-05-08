@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mantenimiento solicitud</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilos.css"/>
+    </head>
+    <title>solicitud mantenimiento</title>
+        <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f4; /* Si quieres un color de respaldo */
+          background-image: url("imagen/fondo.jpg"); /* La ruta desde el HTML */
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      
+        h1 {
+          font-size: 3em;
+          text-align: center;
+        }
+      
+        p {
+          font-size: 1.2rem;
+          line-height: 1.2;
+        }
+        </style>
 </head>
 <body>
     <header>
@@ -25,7 +50,7 @@
     </nav>
 <body>
         <section>
-            <h2>Solicitud de Mantenimiento de Equipo PC</h2>
+            <h2 label for>Solicitud de Mantenimiento de Equipo PC</label>
             <p>Por favor, diligenciar el siguiente formulario para registrar tu solicitud con el fin de poder ayudarte.</p>     
             <form action="procesar_mantenimiento.php" method="post" enctype="multipart/form-data">
                 <div>
@@ -40,7 +65,7 @@
                 </div>
                 <div>
                     <label for="descripcion">Descripción del Mantenimiento Requerido:</label>
-                    <textarea id="descripcion" name="descripcion" rows="15" cols="190"  required></textarea>
+                    <textarea id="descripcion" name="descripcion" rows="15" cols="180"  required></textarea>
                 </div>
                 <div>
                     <label>Métodos de Contacto:</label>

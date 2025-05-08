@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>olvido de contraseña</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilos.css"/>
+    </head>
+    <title>olvido contraseña</title>
+        <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f4; /* Si quieres un color de respaldo */
+          background-image: url("imagen/fondo.jpg"); /* La ruta desde el HTML */
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      
+        h1 {
+          font-size: 3em;
+          text-align: center;
+        }
+      
+        p {
+          font-size: 1.2rem;
+          line-height: 1.2;
+        }
+        </style>
 </head>
 <body>
     <header>
@@ -27,7 +52,7 @@
         <h2>Formulario de Recuperación</h2>
         <form action="procesar_recuperacion.php" method="POST">
             <!-- Confirmación de segundo apellido -->
-            <label for="segundo_apellido">Segundo Apellido:</label>
+            <h2 label for="segundo_apellido">Segundo Apellido:</label>
             <input type="text" id="segundo_apellido" name="segundo_apellido" placeholder="Ingrese su segundo apellido" required>
             <br><br>
 
