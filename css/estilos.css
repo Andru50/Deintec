@@ -74,10 +74,17 @@ nav li {
                 .perfil-container {
                     display: flex; /* Para alinear la foto y los datos en la misma línea */
                     align-items: center; /* Para alinear verticalmente los elementos */
+                    gap: 20px; /* Espacio entre la foto y el bloque de texto, ajusta según necesites */
+                    padding: 20px; /* Añade un poco de espacio alrededor del contenedor del perfil */
                     border: 1px solid #e9e9e9; /* Opcional: para darle un borde al contenedor */
                     padding: 15px; /* Opcional: para agregar espacio alrededor */
                     margin-bottom: 10px; /* Opcional: para separar de otros elementos */
                   }
+                  .info-texto-perfil {
+                    display: flex;
+                  flex-direction: column; /* Organiza los campos de texto verticalmente */
+                    gap: 10px; /* Espacio entre cada línea de información (label + dato) */
+                  }   
         /* Fondo pantalla CSS (pie de pagina) */    
 body {
   background-image: url("imagen/fondo.jpg"); /* Ajusta la ruta según la ubicación de tu imagen */
