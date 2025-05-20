@@ -88,3 +88,29 @@
                 popup.style.display = 'none';
             }
         </script>
+        <script>
+            function signIn() {
+                const enteredEmail = document.getElementById('email').value.trim();
+                const enteredPassword = document.getElementById('password').value.trim();
+        
+                // Aquí defines tu usuario válido
+                
+                
+                const users = {
+                    "hector_monroy@soy.sena.edu.co": {
+                        password: "admin123",
+                        perfil: "perfil.html" // Ruta al perfil correspondiente
+                    }
+                    // Puedes agregar más usuarios aquí si quieres
+                };
+        
+                const user = users[enteredEmail];
+        
+                if (user && user.password === enteredPassword) {
+                    // Redirige directamente al perfil
+                    window.location.href = user.perfil;
+                } else {
+                    alert("Credenciales incorrectas");
+                }
+            }
+        </script>
