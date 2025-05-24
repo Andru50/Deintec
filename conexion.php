@@ -4,7 +4,11 @@ $usuario = "hector";
 $password = "admin";
 $baseDatos = "deintec";
 
-$conexion = new mysqli($servidor, $usuario, $password, $baseDatos);
+$conexion = new mysqli("localhost", "root", "", "nombre_base_datos");
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
+}
+
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
