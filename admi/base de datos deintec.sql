@@ -104,7 +104,7 @@ CREATE TABLE `empleado` (
 
 LOCK TABLES `empleado` WRITE;
 /*!40000 ALTER TABLE `empleado` DISABLE KEYS */;
-INSERT INTO `empleado` VALUES (1,1234496728,'hector andres Monroy narvaez','hector_monroy@soy.sena.edu.co',2500000,'Administrador','Fijo','2024-10-16'),(2,565453654,'Carolina Herrera','carolina.herrera@hotmail.com',2500000,'Administrador','Fijo','2024-10-16'),(3,1664656523,'Jimmy Jhoam Placeres','jimmy.placeres@hotmail.com',2500000,'Administrador','Fijo','2024-10-16');
+INSERT INTO `empleado` VALUES (1,1234496728,'hector andres Monroy narvaez','hector_monroy@soy.sena.edu.co',2500000,'Administrador','Fijo','2024-10-16'),(2,565453654,'Carolina Herrera','Elsa_cherrera@soy.sena.edu.co',2500000,'Administrador','Fijo','2024-10-16'),(3,1664656523,'Jimmy Jhoam Placeres','jimmy.placeres@hotmail.com',2500000,'Administrador','Fijo','2024-10-16');
 /*!40000 ALTER TABLE `empleado` ENABLE KEYS */;
 UNLOCK TABLES;
 
