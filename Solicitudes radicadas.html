@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitudes Activas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #131212;
+            background-image: url("imagen/fondo.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, .container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            background-color: #d20505;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0;
+        }
+        nav ul li a {
+            display: inline-block;
+            color: rgb(0, 0, 0);
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #0056b3;
+        }
+        .solicitud {
+            background: white;
+            max-width: 600px;
+            margin: 15px auto;
+            padding: 20px;
+            border-left: 6px solid #007BFF;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            text-align: left;
+        }
+        .solicitud h3 {
+            margin-top: 0;
+        }
+        .estado {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="imagen/deintec-imagen.png" alt="Logo" width="350" height="110">
+</header>
+
+<nav class="nav-menu">
+    <ul>
+        <li><a href="DEINTEC WEB.html">Home</a></li>
+        <li><a href="#">Solicitudes radicadas</a></li>
+        
+    </ul>
+</nav>
+    <meta charset="UTF-8">
+    <title>Solicitudes Radicadas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Solicitudes Radicadas</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fecha</th>
+                    <th>Solicitante</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ejemplo de solicitudes, reemplaza por datos reales -->
+                <tr>
+                    <td>1</td>
+                    <td>2025-05-24</td>
+                    <td>hector_monroy</td>
+                    <td>Solicitud de soporte técnico</td>
+                    <td><span class="badge badge-success">Resuelta</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2025-05-23</td>
+                    <td>carolina</td>
+                    <td>Actualización de software</td>
+                    <td><span class="badge badge-warning">En proceso</span></td>
+                </tr>
+                <!-- Puedes agregar más filas aquí -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
