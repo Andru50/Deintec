@@ -3,81 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/estilos.css"/>
-    </head>
-    <title>reguistro</title>
-        <style>
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Solicitud de reguistro</title>
+    <style>
         body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f4f4f4; /* Si quieres un color de respaldo */
-          background-image: url("imagen/fondo.jpg"); /* La ruta desde el HTML */
-          background-size: cover;
-          background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url("imagen/fondo.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
         }
-      
         h1 {
-          font-size: 3em;
-          text-align: center;
+            font-size: 3em;
+            text-align: center;
         }
-      
         p {
-          font-size: 1.2rem;
-          line-height: 1.2;
+            font-size: 1.2rem;
+            line-height: 1.2;
         }
-        </style>
+        /* Estilos para el formulario de registro */
+        .registro-form {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .registro-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .registro-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .registro-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .registro-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        
-        <div style="text-align: center;">
-            <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
-        </div>
+    <header style="text-align: center;">
+        <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
     </header>
-        <div id="menu">
-            
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="DEINTEC WEB.html">Home</a></li>
-                    <li><a href="#">Formulario de solicitud</a></li>
-                </ul>
-            </nav>
-        </div>
-    </nav>
-<body>
 
-    <section>
-        <h2 label for>Registro de Usuario</label>
-        <form action="procesar_registro.php" method="post" enctype="multipart/form-data">
-            <div>
-                <label for="nombre_completo">Nombre Completo:</label>
-                <input type="text" id="nombre_completo" name="nombre_completo" required>
-            </div>
-            <div>
-                <label for="correo">Correo Electrónico:</label>
-                <input type="email" id="correo" name="correo" required>
-            </div>
-            <div>
-                <label for="contrasena">Contraseña:</label>
-                <input type="password" id="contrasena" name="contrasena" required>
-            </div>
-            <div>
-                <label for="confirmar_contrasena">Confirmar Contraseña:</label>
-                <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
-            </div>
-            <div>
-                <label for="foto">Subir Foto:</label>
-                <input type="file" id="foto" name="foto" accept="image/*">
-            </div>
-            <button type="submit">Registrarse</button>
+    <div id="nav-menu">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="DEINTEC WEB.html">Home</a></li>
+                <li><a href="#">Formulario de solicitud:</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="registro-form">
+        <h2>Crear  Cuenta</h2>
+        <form action="registrar_cliente.php" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre Completo" required>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Registrar</button>
         </form>
-    </section>
-
-    <footer>
-        </footer>
-</body>
+    </div>
+    </body>
 </html>

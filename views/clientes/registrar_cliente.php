@@ -1,9 +1,9 @@
 <?php
 // 1. Datos de conexión a la base de datos
-$servername = "localhost"; // Generalmente es "localhost"
-$username = "tu_usuario_db";   // Tu nombre de usuario de MySQL
-$password = "tu_contraseña_db"; // Tu contraseña de MySQL
-$dbname = "tu_nombre_db";     // El nombre de tu base de datos
+$servername = "localhost";                     // Generalmente es "localhost"
+$username = "root";                            // Tu nombre de usuario de MySQL
+$password = "12345";                           // Tu contraseña de MySQL
+$dbname = "base_de_datos_deintec";             // CORREGIDO: Nombre de tu DB sin espacios
 
 // 2. Crear la conexión con la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 // 3. Obtener los datos del formulario (usando el método POST)
 $nombre = $_POST['nombre'];
-$email = $_POST['email'];
+$email = $_POST['email']; // CORREGIDO: debe ser 'email'
 $password_ingresada = $_POST['password'];
 
 // 4. Medida de seguridad: Hashear la contraseña
@@ -33,6 +33,7 @@ if ($stmt->execute()) {
     // Opcional: Redirigir al usuario a una página de inicio de sesión o de bienvenida
     // header("Location: login.html");
 } else {
+    // Muestra el error específico de la consulta SQL
     echo "Error al registrar: " . $stmt->error;
 }
 
