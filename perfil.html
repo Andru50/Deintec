@@ -49,7 +49,7 @@ Perfil de usuario
 
     <div class="perfil-container">
         <div class="foto-perfil">
-          <img src="imagen/Perfil/Andre.png" alt="Foto de perfil"width="200" height="190">
+          <img src="imagen/Perfil/#" alt="Foto de perfil"width="200" height="190">
          <!-- Nombre completo -->
             <label for="nombre">Nombre Completo:</label>
             <hp2 class  ="nombre-completo">Hector Andres Monroy</h2>
@@ -62,7 +62,7 @@ Perfil de usuario
 
        <!-- Cargo -->
             <label for="Cargo">Cargo:</label>
-            <hp2 class="correo-electronico">Administrador</p>
+            <hp2 class="correo-electronico">Cliente</p>
             <br><br>  
         </div>
 
@@ -74,37 +74,54 @@ Perfil de usuario
 
     <footer>
 </footer>
+<body>
+
+<div class="perfil-container">
+  <h2>Perfil de Usuario</h2>
+  <form id="formPerfil" enctype="multipart/form-data">
+    <label>Nombre:</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+    
+    <label>Email:</label>
+    <input type="email" id="email" name="email" placeholder="Tu email">
+
+    <label>Imagen de perfil:</label>
+    <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*">
+    <img id="preview" src="default.jpg" alt="Vista previa">
+
+    <button type="submit">Actualizar Perfil</button>
+  </form>
+
+  <button class="logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+</div>
+
+<script>
+  // Vista previa de imagen
+  document.getElementById('imagenPerfil').addEventListener('change', function (event) {
+    const archivo = event.target.files[0];
+    if (archivo) {
+      const lector = new FileReader();
+      lector.onload = function(e) {
+        document.getElementById('preview').src = e.target.result;
+      };
+      lector.readAsDataURL(archivo);
+    }
+  });
+
+  // Enviar datos del formulario
+  document.getElementById('formPerfil').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Aquí enviarías los datos al servidor con fetch o AJAX
+    alert("Perfil actualizado (simulado).");
+  });
+
+  // Función para cerrar sesión
+  function cerrarSesion() {
+    // Aquí deberías redirigir o limpiar la sesión del usuario
+    alert("Sesión cerrada (simulado).");
+    window.location.href = "login.html"; // por ejemplo
+  }
+</script>
+
 </body>
 </html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/estilos.css"/>
-    </head>
-    <title>perfil</title>
-        <style>
-        body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f4f4f4; /* Si quieres un color de respaldo */
-          background-image: url("imagen/fondo.jpg"); /* La ruta desde el HTML */
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-      
-        h1 {
-          font-size: 3em;
-          text-align: center;
-        }
-      
-        p {
-          font-size: 1.2rem;
-          line-height: 1.2;
-        }
-        </style>
-</head>

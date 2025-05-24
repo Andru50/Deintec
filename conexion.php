@@ -1,24 +1,14 @@
 <?php
-$servidor = "localhost";
-$usuario = "hector";
-$password = "admin";
-$baseDatos = "deintec";
+$servidor = "localhost"; // O la IP de tu servidor de BD
+$usuario_db = "root";      // Tu usuario de la BD
+$password_db = "12345";         // Tu contraseña de la BD
+$nombre_db = "deintec";    // El nombre de tu base de datos
 
-$conexion = new mysqli("localhost", "root", "", "nombre_base_datos");
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
+// Crear la conexión
+$conn = mysqli_connect($servidor, $usuario_db, $password_db, $nombre_db);
 
-
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
-
-function obtenerPerfil($idUsuario) {
-    global $conexion;
-    $stmt = $conexion->prepare("SELECT nombre_completo, correo, foto_perfil FROM usuarios WHERE id_usuario = ?");
-    $stmt->bind_param("i", $idUsuario);
-    $stmt->execute();
-    return $stmt->get_result()->fetch_assoc();
+// Verificar la conexión
+if (!$conn) {
+    die("La conexión falló: " . mysqli_connect_error());
 }
 ?>
