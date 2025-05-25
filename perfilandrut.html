@@ -46,8 +46,43 @@
               <li><a href="Solicitudes radicadas.html">Solicitudes radicadas</a></li>
               <li><a href="Permisos.html">Permisos</a></li>
               <div style="display: inline-block;"></div>
+<body>
+      <label>Imagen de perfil:</label>
+      <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*">
+            <button type="submit">Actualizar Perfil</button>
+        </form>
 
+  <button class="logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+  </div>
+  <script>
+  // Vista previa de imagen
+  document.getElementById('imagenPerfil').addEventListener('change', function (event) {
+    const archivo = event.target.files[0];
+    if (archivo) {
+      const lector = new FileReader();
+      lector.onload = function(e) {
+        document.getElementById('preview').src = e.target.result;
+      };
+      lector.readAsDataURL(archivo);
+    }
+  });
+
+  // Enviar datos del formulario
+  document.getElementById('formPerfil').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Aquí enviarías los datos al servidor con fetch o AJAX
+    alert("Perfil actualizado (simulado).");
+  });
+
+  // Función para cerrar sesión
+  function cerrarSesion() {
+    // Aquí deberías redirigir o limpiar la sesión del usuario
+    alert("Sesión cerrada (simulado).");
+    window.location.href = "DEINTEC WEB.html"; // por ejemplo
+  }
+</script>
     <style>
+      
     body {
       margin: 0;
       font-family: Arial, sans-serif;
