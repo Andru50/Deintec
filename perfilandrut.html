@@ -47,36 +47,127 @@
               <li><a href="Permisos.html">Permisos</a></li>
               <div style="display: inline-block;"></div>
 
-    <div class="perfil-container">
-        <div class="foto-perfil">
-          <img src="imagen/Perfil/Andre.png" alt="Foto de perfil"width="200" height="190">
-        </div>
-          <!-- ID usuario -->
-            <label for="Id Usuario">Id Usuario:</label>
-            <hp2 class  ="#Id">ID001</h2>
-            <br><br>
-         <!-- Nombre completo -->
-            <label for="nombre">Nombre Completo:</label>
-            <hp2 class  ="nombre-completo">Hector Andres Monroy</h2>
-            <br><br>
-        <!-- Correo -->
-            <label for="correo">Correo Electrónico:</label>
-            <hp2 class="correo-electronico">hector_monroy@soy.sena.edu.co</p>
-            <br><br>
-        <!-- Estado de la Cuenta-->
-            <label for="Estado de la Cuenta">Estado Cuenta:</label>
-            <hp2 class="Estado de la Cuenta">Activa</p>
-            <br><br>
+    <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url("imagen/fondo.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #333;
+    }
 
-       <!-- Cargo -->
-            <label for="Cargo">Cargo:</label>
-            <hp2 class="correo-electronico">Administrador</p>
-            <br><br>  
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .subtitulo {
+      text-align: center;
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .perfil-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .columna {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .columna img {
+      border-radius: 50%;
+      width: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .detalles strong {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .social {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .social a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .social a:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Perfil</h1>
+    <p class="subtitulo">Soy un desarrollador web PHP creativo</p>
+
+    <div class="perfil-grid">
+      <!-- Columna izquierda -->
+      <div class="columna">
+        <h2>Acerca de mí</h2>
+        <p>
+       <strong>Cargo:</strong> Administrador web principal
+        <strong>Experiencia:</strong> 6 meses en desarrollo
+        <strong>Habilidades:</strong> PHP, JavaScript, HTML, CSS
+        </p>
+        <p><small>Imagen de <a href="https://www.freepik.com" target="_blank">Freepik</a></small></p>
+      </div>
+
+      <!-- Columna central -->
+      <div class="columna" style="text-align: center;">
+        <img src="imagen/Perfil/Andre.png" alt="Foto de perfil">
+      </div>
+
+      <!-- Columna derecha -->
+      <div class="columna detalles">
+        <h2>Detalles</h2>
+        <strong>Nombre:</strong> hector andres monroy 
+        <strong>Edad:</strong> 27 años
+        <strong>Ubicación:</strong> Bogota D.c
+
+        <div class="social">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
     </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     </div>
 </ul>
 
