@@ -85,12 +85,96 @@ nav li {
                   flex-direction: column; /* Organiza los campos de texto verticalmente */
                     gap: 10px; /* Espacio entre cada línea de información (label + dato) */
                   }   
-        /* Fondo pantalla CSS (pie de pagina) */    
+        /* Fondo pantalla CSS (pie de pagina) */   
+
+ /* login de seccion (central de pagina) */         
 body {
+  margin: 0;
+    padding: 0;
   background-image: url("imagen/fondo.jpg"); /* Ajusta la ruta según la ubicación de tu imagen */
   background-size: cover;
   background-repeat: no-repeat;
   /* Puedes agregar otras propiedades como background-position aquí */
+}
+
+body.login-body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('../imagen/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: white;
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-logo {
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.login-header h2 {
+  color: #0ea5e9;
+  margin-bottom: 1em;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-button {
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background-color: #0284c7;
+}
+
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.login-links a {
+  color: #0ea5e9;
+  text-decoration: none;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+
+.credit {
+  margin-top: 15px;
+  font-size: 0.75rem;
+  color: gray;
 }
 
 

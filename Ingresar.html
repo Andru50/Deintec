@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/estilos.css"/>
     </head>
-    <title>solicitud mantenimiento</title>
+    <title>ingresar</title>
         <style>
         body {
           font-family: Arial, sans-serif;
@@ -43,24 +43,42 @@
             <nav class="nav-menu">
                 <ul>
                     <li><a href="DEINTEC WEB.html">Home</a></li>
-                    <li><a href="#">Formulario de solicitud</a></li>
                 </ul>
             </nav>
         </div>
     </nav>
 <body>
+    <ul>
+<div class="login-container">
+    <div class="login-header">
+      <img src="imagen/deintec-imagen.png" alt="logo" class="login-logo">
+      <h2>Inicia sesión ahora</h2>
+    </div>
+    
+    <form onsubmit="signIn(); return false;">
+      <input type="email" id="email" placeholder="Enter your Username" required />
+      <input type="password" id="password" placeholder="Enter your Password" required />
+      
+      <button type="submit" class="login-button">ACCESO</button>
+      
+      <div class="login-links">
+        <a href="#">¿No tienes una cuenta?</a>
+        <a href="olvido_contraseña.html">¿Se te olvidó tu contraseña?</a>
+      </div>
+    </form>
+    
+    <p class="credit">Imagen de <a href="https://www.freepik.com" target="_blank">Freepik</a></p>
+    <div id="popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>¡Bienvenido!</h2>
+            <p>Has iniciado sesión correctamente.</p>
+            <p>Redirigiendo al perfil...</p>
+            
+</div>
+    </div>
+    </ul>
 
-  <nav class="nav-menu">
-        </div>
-        <input type="text" id="email" placeholder="Nombre de usuario o correo">
-        <input type="password" id="password" placeholder="Contraseña">
-        <button onclick="signIn()">Iniciar sesión</button>
-        
-        <div id="popup" style="display:none; border: 1px solid black; padding: 20px; background-color: lightyellow;">
-            ¡Inicio de sesión exitoso!
-            <button onclick="closePopup()">Cerrar</button>
-        </div>
-        
         <script>
             const genericEmail = "usuario@generico.com"; // Replace with your desired generic email
             const genericPassword = "contrasenaGenerica"; // Replace with your desired generic password
@@ -121,3 +139,6 @@
                 }
             }
         </script>
+</body>
+</html>
+        
