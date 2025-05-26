@@ -42,19 +42,24 @@
             
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="DEINTEC WEB.html">Home</a></li>
-                </ul>
-            </nav>
-        </div>
-    </nav>
-<body>
-    <ul>
-<div class="login-container">
-    <div class="login-header">
-      <img src="imagen/deintec-imagen.png" alt="logo" class="login-logo">
-      <h2>Inicia sesión ahora</h2>
-    </div>
+                    <nav class="nav-menu">
+  <ul>
+    <li><a href="DEINTEC WEB.html">Home</a></li>
+    <li><button id="openModalBtn">Iniciar Sesión</button></li>
+  </ul>
+</nav>
+
+<div id="loginModal" class="modal-overlay">
+
+  <div class="modal-content">
     
+    <span class="close-button">&times;</span>
+
+    <div class="login-container">
+      <div class="login-header">
+        <img src="imagen/deintec-imagen.png" alt="Logo" class="login-logo">
+        <h2>Inicia sesión ahora</h2>
+      </div>
     <form onsubmit="signIn(); return false;">
       <input type="email" id="email" placeholder="Enter your Username" required />
       <input type="password" id="password" placeholder="Enter your Password" required />
@@ -66,18 +71,7 @@
         <a href="olvido_contraseña.html">¿Se te olvidó tu contraseña?</a>
       </div>
     </form>
-    
-    <p class="credit">Imagen de <a href="https://www.freepik.com" target="_blank">Freepik</a></p>
-    <div id="popup" class="popup" style="display: none;">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h2>¡Bienvenido!</h2>
-            <p>Has iniciado sesión correctamente.</p>
-            <p>Redirigiendo al perfil...</p>
-            
-</div>
-    </div>
-    </ul>
+ </div>
 
         <script>
             const genericEmail = "usuario@generico.com"; // Replace with your desired generic email
