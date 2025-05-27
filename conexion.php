@@ -6,7 +6,7 @@ $nombre_db = "deintec";    // El nombre base de datos
 
 // Crear la conexión
 //                           servidor, usuario, contraseña, base de datos
-$conexion = mysqli_connect("localhost", "root",    "",      "deentec");
+$conexion = mysqli_connect("localhost", "root",    "12345",      "deentec");
 
 // Verificar la conexión
 if (!$conn) {
