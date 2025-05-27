@@ -5,7 +5,8 @@ $password_db = "12345";    // Tu contraseña de la BD
 $nombre_db = "deintec";    // El nombre base de datos
 
 // Crear la conexión
-$conn = mysqli_connect($servidor, $usuario_db, $password_db, $nombre_db);
+//                           servidor, usuario, contraseña, base de datos
+$conexion = mysqli_connect("localhost", "root",    "",      "deentec");
 
 // Verificar la conexión
 if (!$conn) {
