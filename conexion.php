@@ -1,12 +1,12 @@
 <?php
-$servidor = "localhost";   // O la IP de tu servidor de BD
+$servidor = "127.0.0.1:3306";   // O la IP de tu servidor de BD
 $usuario_db = "root";      // Tu usuario de la BD
-$password_db = "12345";    // Tu contraseña de la BD
-$nombre_db = "base de datos deintec";    // El nombre base de datos
+$password_db = "";    // Tu contraseña de la BD
+$nombre_db = "Deintec";    // El nombre base de datos
 
 // Crear la conexión
 //                           servidor, usuario, contraseña, base de datos
-$conexion = new mysqli("localhost", "root", "12345", "base de datos deintec");
+$conexion = new mysqli("localhost", "root", "", "Deintec");
 
 // Verificar la conexión
 if (!$conn) {
