@@ -1,5 +1,5 @@
 <?php
-require_once 'd:\proyecto\Deintec\conexion.php';
+require_once __DIR__ . '/../models/Cliente.php';
 
 class Cliente {
     public static function obtenerTodos() {

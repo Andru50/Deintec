@@ -1,5 +1,5 @@
 <?php
-require_once 'd:\proyecto\Deintec\models\Cliente.php';
+require_once __DIR__ . '/../models/Cliente.php';
 
 class ClienteController {
     public function index() {
