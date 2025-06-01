@@ -54,6 +54,8 @@
         .estado {
             font-weight: bold;
             color: green;
+
+            
         }
     </style>
 </head>
@@ -67,28 +69,46 @@
     <ul>
         <li><a href="DEINTEC WEB.html">Home</a></li>
         <li><a href="Solicitudes radicadas.html">Solicitudes radicadas</a></li>
-        
     </ul>
 </nav>
 
 <div class="container">
     <h2>Solicitudes Activas</h2>
 
-    <!-- Ejemplo de tarjeta de solicitud -->
+    <!-- Tarjeta de solicitud 1 -->
     <div class="solicitud">
         <h3>Servicio: Mantenimiento</h3>
         <p><strong>Descripción:</strong> lentitud equipo</p>
         <p><strong>Estado:</strong> <span class="estado">Pendiente</span></p>
         <p><strong>Fecha:</strong> 2025-05-24</p>
+        <p><strong>Radicado:</strong> <span class="radicado"></span></p>
     </div>
 
+    <!-- Tarjeta de solicitud 2 -->
     <div class="solicitud">
-        <h3>Servicio: Instalacion</h3>
-        <p><strong>Descripción:</strong> paquete oficce</p>
+        <h3>Servicio: Instalación</h3>
+        <p><strong>Descripción:</strong> paquete office</p>
         <p><strong>Estado:</strong> <span class="estado">En progreso</span></p>
         <p><strong>Fecha:</strong> 2025-05-23</p>
+        <p><strong>Radicado:</strong> <span class="radicado"></span></p>
     </div>
 </div>
+
+<!-- Script para generar números de radicado -->
+<script>
+    function generarRadicado(index) {
+        const fecha = new Date();
+        const año = fecha.getFullYear();
+        const numero = String(index + 1).padStart(4, '0'); // 0001, 0002, etc.
+        return `${año}-${numero}`;
+    }
+
+    // Asigna un número de radicado a cada solicitud
+    const radicados = document.querySelectorAll('.radicado');
+    radicados.forEach((span, index) => {
+        span.textContent = generarRadicado(index);
+    });
+</script>
 
 </body>
 </html>
