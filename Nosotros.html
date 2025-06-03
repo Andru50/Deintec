@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nosotros - Deintec</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #131212;
+      background-image: url("imagen/fondo.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      color: #f5f5f5;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      background-color: #d20505;
+    }
+
+    nav ul li {
+      display: inline-block;
+    }
+
+    nav ul li a {
+      color: black;
+      padding: 15px 20px;
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    nav ul li a:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: rgba(30, 30, 30, 0.95);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    }
+
+    h1 {
+      color: #d20505;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background-color: rgba(50, 50, 50, 0.9);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .card-title {
+      color: #d20505;
+      text-align: center;  /* CENTRADO DEL TÍTULO */
+    }
+
+    .card-text ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card-text li::before {
+      content: '✅ ';
+      margin-right: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="imagen/deintec-imagen.png" alt="Logo Deintec" width="350" height="110" />
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="DEINTEC WEB.html">Home</a></li>
+      <li><a href="catalogo.html">Catálogo de Servicios</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>¿Quiénes Somos?</h1>
+
+    <p style="font-size: 1.1rem; line-height: 1.6; text-align: justify;">
+      Somos una empresa especializada en el mantenimiento de equipos, instalación de sistemas tecnológicos, diagnóstico y solución de fallas, así como en diversos servicios TI que ayudan a mantener tu negocio operativo, seguro y eficiente.
+    </p>
+
+    <div class="row mt-4">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 text-light">
+          <div class="card-body">
+            <h3 class="card-title">Misión</h3>
+            <p class="card-text">
+              Brindar servicios tecnológicos de alta calidad que mantengan las operaciones de nuestros clientes seguras, eficientes y actualizadas mediante soluciones innovadoras y soporte profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 text-light">
+          <div class="card-body">
+            <h3 class="card-title">Visión</h3>
+            <p class="card-text">
+              Ser una empresa líder en servicios tecnológicos en la región, reconocida por nuestra confiabilidad, rapidez y excelencia en atención al cliente.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mb-4">
+        <div class="card text-light">
+          <div class="card-body">
+            <h3 class="card-title">Nuestros Servicios</h3>
+            <ul class="card-text">
+              <li>Mantenimiento preventivo y correctivo</li>
+              <li>Instalación de sistemas y equipos tecnológicos</li>
+              <li>Diagnóstico y solución de fallas</li>
+              <li>Asesoría y soporte técnico personalizado</li>
+              <li>Actualización y optimización de sistemas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
+
