@@ -60,9 +60,9 @@
         <img src="imagen/deintec-imagen.png" alt="Logo" class="login-logo">
         <h2>Inicia sesión ahora</h2>
       </div>
-    <form onsubmit="signIn(); return false;">
-      <input type="email" id="email" placeholder="Enter your Username" required />
-      <input type="password" id="password" placeholder="Enter your Password" required />
+    <form accion="controllers/login.php" method="post">
+      <input type="email" id="email" placeholder="Enter your Username" required name="email" />
+      <input type="password" id="password" placeholder="Enter your Password" required name ="password"/>
       
       <button type="submit" class="login-button">ACCESO</button>
       
@@ -101,37 +101,7 @@
             }
         </script>
         <script>
-            function signIn() {
-                const enteredEmail = document.getElementById('email').value.trim();
-                const enteredPassword = document.getElementById('password').value.trim();
-        
-                // Aquí defines tu usuario válido
-                
-
-                const users = {
-                            "hector_monroy@soy.sena.edu.co": {
-                        password: "admin123",
-                        perfil: "perfil andrut.html"
-                },
-                            "elsa_cherrera@soy.sena.edu.co": {
-                        password: "admin456",
-                        perfil: "perfil carolina.html"
-                },
-                          "jimmy_placeres@soy.sena.edu.co": {
-                        password: "contrasenaGenerica",
-                        perfil: "perfil_generico.html"
-                }
-            // Agrega más usuarios aquí
-        };               
-                const user = users[enteredEmail];
-        
-                if (user && user.password === enteredPassword) {
-                    // Redirige directamente al perfil
-                    window.location.href = user.perfil;
-                } else {
-                    alert("Credenciales incorrectas");
-                }
-            }
+          
         </script>
 </body>
 </html>
