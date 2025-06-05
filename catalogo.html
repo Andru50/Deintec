@@ -3,70 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/estilos.css"/>
-    </head>
-    <title>catalogo</title>
-        <style>
+    <title>Catálogo de Servicios Tecnológicos - DEINTEC</title>
+    <link rel="stylesheet" href="css/estilos.css"> <style>
         body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f4f4f4; /* Si quieres un color de respaldo */
-          background-image: url("imagen/fondo.jpg"); /* La ruta desde el HTML */
-          background-size: cover;
-          background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #131212;
+            background-image: url("imagen/fondo.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
         }
-      
-        h1 {
-          font-size: 3em;
-          text-align: center;
+        header, nav, .container {
+            text-align: center;
+            margin-bottom: 20px;
         }
-      
-        p {
-          font-size: 1.2rem;
-          line-height: 1.2;
-        }
-        </style>
+        /* Estilos básicos para demostración - Mueve esto a tu archivo CSS */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background-color: #333; color: white; padding: em 0; text-align: center; }
+        .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+        .service-catalog { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .service-card { background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 400px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+        .service-card img { max-width: 80px; margin-bottom: 15px; }
+        .service-card h3 { margin-top: 0; color: #333; }
+        .service-card p { font-size: 0.9em; color: #666; }
+        .service-card a { display: inline-block; margin-top: 15px; padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        .service-card a:hover { background-color: #0056b3; }
+        footer { text-align: center; padding: 20px 0; margin-top: 30px; background-color: #333; color: white; }
+    </style>
 </head>
 <body>
-    <header>
-        
-        <div style="text-align: center;">
-            <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
-        </div>
-    </header>
-        <div id="menu">
-            
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="DEINTEC WEB.html">Home</a></li>
-                </ul>
-            </nav>
-        </div>
-    </nav>
-<nav class="nav-menu">
-<ul>
-        <li><a href="Falla de Sistema.html">Falla de sistema</a></li>
-        <div style="display: inline-center;"></div>
-        <img src="imagen/Fallas de sistema.png" alt="" width="320" height="110">
-    </div>
-        <li><a href="Mantenimiento.html">mantenimiento</a></li>
-      </div style="display: inline-center;"></div>
-        <img src="imagen/Mantenimiento.jpg" alt="" width="320" height="110">
-    </div>
-        <li><a href="Instalacion.html">instalacion</a></li>
-      </div style="display: inline-center;"></div>
-        <img src="imagen/instalacion.jpg" alt="" width="320" height="110">
-    </div>
-</ul>
 
-<div></div> 
-<div></div>
-<div></div>  
+    <header>
+        <div style="text-align: center;">
+            <img src="imagen/deintec-imagen.png" alt="Logo DEINTEC" width="350" height="110"> </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="DEINTEC WEB.html">Home</a></li>
+                </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="text-align: center; font-size: 3em; margin-bottom: 30px;">Catálogo de Servicios Tecnológicos</h1>
+
+        <section class="service-catalog">
+            <article class="service-card">
+                <img src="imagen/Fallas de sistema.png" alt="Icono Falla de Sistema"> <h3>⚠️ Falla de Sistema</h3>
+                <p>Reporte problemas o interrupciones en sus sistemas y aplicaciones.</p>
+                <a href="Falla de Sistema.html">Reportar Falla</a>
+            </article>
+
+            <article class="service-card">
+                <img src="imagen/Mantenimiento.jpg" alt="Icono Mantenimiento"> <h3>🔧 Mantenimiento</h3>
+                <p>Solicite mantenimiento preventivo o correctivo para sus equipos y software.</p>
+                <a href="mantenimiento.html">Solicitar Mantenimiento</a>
+            </article>
+
+            <article class="service-card">
+                <img src="imagen/instalacion.jpg" alt="Icono Instalación"> <h3>🔌 Instalación</h3>
+                <p>Pida la instalación de nuevo hardware, software o configuración de servicios.</p>
+                <a href="instalacion.html">Solicitar Instalación</a>
+            </article>
+        </section>
+    </div>
+
     <footer>
+        <p>&copy; 2025 DEINTEC Servicios Tecnológicos. Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>

@@ -22,7 +22,7 @@
         nav ul {
             list-style: none;
             padding: 0;
-            background-color: rgb(168, 11, 11);
+            background-color: #d20505;
             margin: 0;
         }
         nav ul li {
@@ -54,7 +54,6 @@
         .estado {
             font-weight: bold;
             color: green;
-            
         }
     </style>
 </head>
@@ -67,20 +66,24 @@
 <nav class="nav-menu">
     <ul>
         <li><a href="DEINTEC WEB.html">Home</a></li>
-        <li><a href="Solicitudes radicadas.html">Solicitudes radicadas</a></li>
+        <li><a href="#">Solicitudes activas</a></li>
+        
     </ul>
 </nav>
+    <meta charset="UTF-8">
+    <title>Solicitudes activas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Aquí se mostrarán dinámicamente las solicitudes activas -->
 
-<div class="container">
-    <h2>Solicitudes Activas</h2>
-
-    <!-- Tarjeta de solicitud 1 -->
     <div class="solicitud">
-        <h3>Servicio: Mantenimiento</h3>
-        <p><strong>Descripción:</strong> lentitud equipo</p>
+        <p><strong>Servicio:</strong> mantenimiento</p>
+        <p><strong>Descripción:</strong> No prende el computador.</p>
         <p><strong>Estado:</strong> <span class="estado">Pendiente</span></p>
         <p><strong>Fecha:</strong> 2025-05-24</p>
         <p><strong>Radicado:</strong> <span class="radicado"></span></p>
+        <p><strong>Fecha:</strong> 2025-05-23</p>
     </div>
 
     <!-- Tarjeta de solicitud 2 -->
@@ -90,8 +93,11 @@
         <p><strong>Estado:</strong> <span class="estado">En progreso</span></p>
         <p><strong>Fecha:</strong> 2025-05-23</p>
         <p><strong>Radicado:</strong> <span class="radicado"></span></p>
+        <p><strong>Servicio:</strong> instalacion</p>
+        <p><strong>Descripción:</strong> paquete office.</p>
+        <p><strong>Estado:</strong> <span class="estado">En progreso</span></p>
+        <p><strong>Fecha:</strong> 2025-05-22</p>
     </div>
-</div>
 
 <!-- Script para generar números de radicado -->
 <script>
@@ -109,5 +115,5 @@
     });
 </script>
 
-</body>
+    </body>
 </html>
