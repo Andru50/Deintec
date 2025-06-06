@@ -46,107 +46,208 @@ session_start();
 </div>
 </body>
 
-<nav class="nav-menu">
+<nav>
   <ul>
     <li><a href="DEINTEC WEB.html">Home</a></li>
     <li><a href="Solicitudes activas.html">Solicitudes activas</a></li>
     <li><a href="Solicitudes radicadas.html">Solicitudes radicadas</a></li>
+    <li><a href="Permisos.html">Permisos</a></li>
     <div style="display: inline-block;"></div>
+  </ul>
+</nav>
 
-    <body>
-      <div class="perfil-container">
-        <h2>Perfil de Usuario</h2>
-        <form id="formPerfil" enctype="multipart/form-data">
-          <label>Nombre:</label>
+<body>
+  <form id="formPerfil" method="POST" enctype="multipart/form-data" action="controllers/Actualizar_perfil.php"></form>
+  <input type="file" name="imagen" accept="image/*">
+  <button type="submit">Actualizar Perfil</button>
+  </form>
+
+  <button class="logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+  </div>
+  <script>
+    // Vista previa de imagen
+    document.getElementById('imagenPerfil').addEventListener('change', function (event) {
+      const archivo = event.target.files[0];
+      if (archivo) {
+        const lector = new FileReader();
+        lector.onload = function (e) {
+          document.getElementById('preview').src = e.target.result;
+        };
+        lector.readAsDataURL(archivo);
+      }
+    });
+
+    // Enviar datos del formulario
+    document.getElementById('formPerfil').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Aquí enviarías los datos al servidor con fetch o AJAX
+      alert("Perfil actualizado (simulado).");
+    });
+
+    // Función para cerrar sesión
+    function cerrarSesion() {
+      // Aquí deberías redirigir o limpiar la sesión del usuario
+      alert("Sesión cerrada (simulado).");
+      window.location.href = "DEINTEC WEB.html"; // por ejemplo
+    }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url("imagen/fondo.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .subtitulo {
+      text-align: center;
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .perfil-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .columna {
+      flex: 1;
+      min-width: 20px;
+    }
+
+    .columna img {
+      border-radius: 50%;
+      width: 300px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .detalles strong {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .social {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .social a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .social a:hover {
+      color: #007bff;
+    }
+  </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Perfil</h1>
+      <p class="subtitulo">Soy un desarrollador web PHP</p>
+
+      <div class="perfil-grid">
+        <!-- Columna izquierda -->
+        <div class="columna">
+          <h2>Acerca de mí</h2>
+          <p>
+            <strong>Cargo:</strong> Administrador web principal
+            <strong>Experiencia:</strong> 6 meses en desarrollo
+            <strong>Habilidades:</strong> PHP, JavaScript, HTML, CSS
+          </p>
+          <p><small>Imagen de <a href="https://www.freepik.com" target="_blank">Freepik</a></small></p>
+        </div>
+
+        <!-- Columna central -->
+        <div class="columna" style="text-align: center;">
+          <img src="<?php echo isset($_SESSION['Perfil']) ? $_SESSION['Perfil'] : 'app/imagenes/Perfil/Andre.png'; ?>"
+            alt="Foto de perfil" style="width:300px; border-radius:50%;">
+
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="columna detalles">
+          <h2>Detalles</h2>
+          <strong>ID:</strong>
+          <input type="text" id="id" name="id" placeholder="ID de usuario"
+            value="<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : ''; ?>" readonly>
+          <strong>Nombre:</strong>
           <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
             value="<?php echo isset($_SESSION['nombre']) ? $_SESSION['nombre'] : ''; ?>">
-
-          <label>Email:</label>
+          <strong>Email:</strong>
           <input type="email" id="email" name="email" placeholder="Tu email"
             value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>">
+          <strong>Ubicación:</strong>
+          <input type="text" id="ubicacion" name="ubicacion" placeholder="Tu ubicación"
+            value="<?php echo isset($_SESSION['ubicacion']) ? $_SESSION['ubicacion'] : ''; ?>">
 
-          <label>Imagen de perfil:</label>
-          <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*">
-          <img id="preview" src="default.jpg" alt="Vista previa">
-
-          <button type="submit">Actualizar Perfil</button>
-        </form>
-
-        <button class="logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+          <div class="social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <script>
-        // Vista previa de imagen
-        document.getElementById('imagenPerfil').addEventListener('change', function (event) {
-          const archivo = event.target.files[0];
-          if (archivo) {
-            const lector = new FileReader();
-            lector.onload = function (e) {
-              document.getElementById('preview').src = e.target.result;
-            };
-            lector.readAsDataURL(archivo);
-          }
-        });
+    <script>
+      // ... (código para la vista previa) ...
 
-        // Enviar datos del formulario
-        document.getElementById('formPerfil').addEventListener('submit', function (e) {
-          e.preventDefault();
-          // Aquí enviarías los datos al servidor con fetch o AJAX
-          alert("Perfil actualizado (simulado).");
-        });
+      formPerfil.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
 
-        // Función para cerrar sesión
-        function cerrarSesion() {
-          // Aquí deberías redirigir o limpiar la sesión del usuario
-          alert("Sesión cerrada (simulado).");
-          window.location.href = "DEINTEC WEB.html"; // por ejemplo
-        }
-      </script>
-      
-      <script>
-        const formPerfil = document.getElementById('formPerfil');
-        const imagenPerfilInput = document.getElementById('imagenPerfil');
-        const previewImage = document.getElementById('preview');
-
-        // --- Vista previa de la imagen ---
-        imagenPerfilInput.addEventListener('change', function (event) {
-          const archivo = event.target.files[0];
-          if (archivo) {
-            const lector = new FileReader();
-            lector.onload = function (e) {
-              previewImage.src = e.target.result;
+        // Asegúrate que esta ruta sea correcta desde la ubicación de perfil.php
+        fetch('controllers/actualizar_perfil.php', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.status === 'success') {
+              alert(data.message);
+              // Actualiza la imagen en la página sin recargar
+              // La ruta devuelta ya es la correcta (ej: 'uploads/perfil_1_168...jpg')
+              document.getElementById('preview').src = data.newImageUrl + '?t=' + new Date().getTime();
+            } else {
+              alert('Error: ' + data.message);
             }
-            lector.readAsDataURL(archivo);
-          }
-        });
-
-        // --- Enviar datos del formulario ---
-        formPerfil.addEventListener('submit', function (e) {
-          e.preventDefault(); // Evitar el envío tradicional del formulario
-
-          const formData = new FormData(this);
-
-          fetch('actualizar_perfil.php', {
-            method: 'POST',
-            body: formData
           })
-            .then(response => response.json())
-            .then(data => {
-              if (data.status === 'success') {
-                alert(data.message);
-                // Actualiza la imagen en la página sin necesidad de recargar
-                // Se agrega una marca de tiempo para evitar problemas de caché del navegador
-                previewImage.src = data.newImageUrl + '?t=' + new Date().getTime();
-              } else {
-                alert('Error: ' + data.message);
-              }
-            })
-            .catch(error => {
-              console.error('Error en la solicitud:', error);
-              alert('Ocurrió un error al conectar con el servidor.');
-            });
-        });
-      </script>
-    </body>
+          .catch(error => console.error('Error:', error));
+      });
+
+      // ... (resto del script) ...
+    </script>
+  </body>
 
 </html>
