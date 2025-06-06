@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilos.css"/>
+    </head>
+    <title>ingresar</title>
+        <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f4; /* Si quieres un color de respaldo */
+          background-image: url("imagen/fondo.jpg"); /* La ruta desde el HTML */
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      
+        h1 {
+          font-size: 3em;
+          text-align: center;
+        }
+      
+        p {
+          font-size: 1.2rem;
+          line-height: 1.2;
+        }
+        </style>
+</head>
+<body>
+    <header>
+        
+        <div style="text-align: center;">
+            <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
+        </div>
+    </header>
+        <div id="menu">
+            
+            <nav class="nav-menu">
+                <ul>
+                    <nav class="nav-menu">
+  <ul>
+    <li><a href="DEINTEC WEB.html">Home</a></li>
+    <li><button id="openModalBtn">Iniciar Sesión</button></li>
+  </ul>
+</nav>
+
+<div id="loginModal" class="modal-overlay">
+
+  <div class="modal-content">
+    
+    <span class="close-button">&times;</span>
+
+    <div class="login-container">
+      <div class="login-header">
+        <img src="imagen/deintec-imagen.png" alt="Logo" class="login-logo">
+        <h2>Inicia sesión ahora</h2>
+      </div>
+    <form onsubmit="signIn(); return false;">
+      <input type="email" id="email" placeholder="Enter your Username" required />
+      <input type="password" id="password" placeholder="Enter your Password" required />
+      
+      <button type="submit" class="login-button">ACCESO</button>
+      
+      <div class="login-links">
+        <a href="#">¿No tienes una cuenta?</a>
+        <a href="olvido_contraseña.html">¿Se te olvidó tu contraseña?</a>
+      </div>
+    </form>
+ </div>
+        <script>
+            const genericEmail = "usuario@generico.com"; // Replace with your desired generic email
+            const genericPassword = "contrasenaGenerica"; // Replace with your desired generic password
+            const popup = document.getElementById('popup');
+        
+            function signIn() {
+                const enteredEmail = document.getElementById('email').value;
+                const enteredPassword = document.getElementById('password').value;
+        
+                if (enteredEmail === genericEmail && enteredPassword === genericPassword) {
+                    // Simulate successful login
+                    console.log("Inicio de sesión exitoso (inseguro)");
+                    showPopup();
+                    // In a real application, you would typically set a session or token here.
+                } else {
+                    alert("Credenciales incorrectas");
+                }
+            }
+        
+            function showPopup() {
+                popup.style.display = 'block';
+            }
+        
+            function closePopup() {
+                popup.style.display = 'none';
+            }
+        </script>
+        <script>
+      
+</body>
+</html>
+        
