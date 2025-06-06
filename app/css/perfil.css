@@ -1,0 +1,41 @@
+.perfil-container {
+    display: flex; /* Para alinear la foto y los datos en la misma línea */
+    align-items: center; /* Para alinear verticalmente los elementos */
+    border: 1px solid #ccc; /* Opcional: para darle un borde al contenedor */
+    padding: 15px; /* Opcional: para agregar espacio alrededor */
+    margin-bottom: 10px; /* Opcional: para separar de otros elementos */
+  }
+  
+  .foto-perfil {
+    width: 80px; /* Ajusta el tamaño de la foto */
+    height: 80px;
+    border-radius: 50%; /* Para hacer la foto circular */
+    overflow: hidden; /* Asegura que la imagen se recorte dentro del círculo */
+    margin-right: 15px; /* Espacio entre la foto y los datos */
+  }
+  
+  .foto-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que la imagen cubra el contenedor sin deformarse */
+  }
+  
+  .datos-perfil h2 {
+    margin-top: 0; /* Elimina el margen superior del nombre */
+    margin-bottom: 5px;
+  }
+  
+  .datos-perfil p {
+    margin-bottom: 0; /* Elimina el margen inferior del correo */
+    color: #555; /* Opcional: color del texto del correo */
+  }
+  
+  /* Opcional: Si quieres la foto a la derecha */
+  /*.perfil-container {
+    flex-direction: row-reverse;
+  }
+  
+  .foto-perfil {
+    margin-left: 15px;
+    margin-right: 0;
+  }*/

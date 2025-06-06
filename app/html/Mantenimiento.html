@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilos.css"/>
+    </head>
+    <title>solicitud mantenimiento</title>
+        <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f4; /* Si quieres un color de respaldo */
+          background-image: url("imagen/fondo.jpg"); /* La ruta desde el HTML */
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      
+        h1 {
+          font-size: 3em;
+          text-align: center;
+        }
+      
+        p {
+          font-size: 1.2rem;
+          line-height: 1.2;
+        }
+        </style>
+</head>
+<body>
+    <header>
+        
+        <div style="text-align: center;">
+            <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
+        </div>
+    </header>
+        <div id="menu">
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="DEINTEC WEB.html">Home</a></li>
+                    <li><a href="#">Formulario de solicitud</a></li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+<body>
+        <section>
+            <h2 label for>Solicitud de Mantenimiento de Equipo PC</label>
+            <p>Por favor, diligenciar el siguiente formulario para registrar tu solicitud con el fin de poder ayudarte.</p>     
+            <form action="procesar_mantenimiento.php" method="post" enctype="multipart/form-data">
+                <div>
+                    <label for="tipo_mantenimiento">Tipo de Mantenimiento:</label>
+                    <select id="tipo_mantenimiento" name="tipo_mantenimiento" required>
+                        <option value="">Seleccione un tipo de mantenimiento</option>
+                        <option value="preventivo">Mantenimiento Preventivo</option>
+                        <option value="correctivo">Mantenimiento Correctivo</option>
+                        <option value="actualizacion">Actualización de Componentes/Software</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="descripcion">Descripción del Mantenimiento Requerido:</label>
+                    <textarea id="descripcion" name="descripcion" rows="15" cols="180"  required></textarea>
+                </div>
+                <div>
+                    <label>Métodos de Contacto:</label>
+                    <div>
+                        <input type="checkbox" id="contacto_email" name="contacto[]" value="email">
+                        <label for="contacto_email">Correo Electrónico</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="contacto_telefono" name="contacto[]" value="telefono">
+                        <label for="contacto_telefono">Teléfono</label>
+                    </div>
+                </div>
+                <div>
+                    <label for="imagen">Subir Imagen (opcional):</label>
+                    <input type="file" id="imagen" name="imagen" accept="image/*">
+                </div>
+                <button type="submit">Solicitar Mantenimiento</button>
+            </form>
+    
+            <div id="confirmacion_radicado" style="display:none;">
+                <h3>Número de Radicado de Mantenimiento:</h3>
+                <p id="numero_radicado"></p>
+            </div>
+        </section>
+    
+        <footer>
+            </footer>
+    
+        <script>
+            document.querySelector('form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Evita el envío automático del formulario por ahora
+    
+                // Aquí iría la lógica para enviar los datos al servidor (AJAX)
+                // Simulamos una respuesta exitosa y mostramos el número de radicado
+                const numeroRadicadoGenerado = Math.floor(Math.random() * 1000000); // Generar un número aleatorio como ejemplo
+    
+                document.getElementById('numero_radicado').textContent = numeroRadicadoGenerado;
+                document.getElementById('confirmacion_radicado').style.display = 'block';
+                document.querySelector('form').style.display = 'none'; // Ocultar el formulario después del registro simulado
+            });
+        </script>
+    </body>
+    </html>

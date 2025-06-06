@@ -1,0 +1,227 @@
+header, nav{
+    /*background-color: blue;*/
+    background-color: rgb(168, 11, 11);
+      color: rgb(8, 8, 8);
+      /*margin: -8px 1px 0px - 8px;*/
+      /*margin-top: -8px;*/
+      /*width: 100%;*/
+      /*padding-top: 10px;*/
+      /*padding-left: 10px;*/
+      /*padding-bottom: 10%;*/
+}
+nav a{
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.774);
+}
+nav li {
+  display: inline-block;
+  
+  margin-left: 210px;
+  margin-top: 0;
+  padding: 10px;
+  background-color: #ddd;
+  }
+
+    header
+            body {
+                font-family: arial, sans-serif;
+            }
+            h1 {
+                font-size: 2em;
+                text-align: left;
+            }
+            aside {
+                width: 15%;
+                padding-left: 15px;
+                margin-left: 15px;
+                float: right;
+                font-style: italic;
+                background-color: rgb(21, 235, 21);
+                /* Add the following properties to lift the text */
+                margin-top: -560px; /* Adjust the value as needed */
+                padding-top: 10px; /* Adjust the value as needed */
+              }
+
+         /* Estilos CSS (pie de pagina) */
+         footer {
+         background-color: rgb(168, 11, 11);
+          padding: 20px;
+            }
+
+                    .container {
+                max-width: 1200px;
+                 margin: 0 auto;
+                }
+
+                .row {
+               display: flex;
+               justify-content: space-between;
+                }
+
+               .column {
+                width: 60%;
+                }
+
+                .social-icons li {
+                 display: inline-block;
+                 margin-right: 40px;
+               }
+
+               .copyright {
+               text-align: center;
+                margin-top: 20px;
+                }
+                .perfil-container {
+                    display: flex; /* Para alinear la foto y los datos en la misma línea */
+                    align-items: center; /* Para alinear verticalmente los elementos */
+                    gap: 20px; /* Espacio entre la foto y el bloque de texto, ajusta según necesites */
+                    padding: 20px; /* Añade un poco de espacio alrededor del contenedor del perfil */
+                    border: 1px solid #e9e9e9; /* Opcional: para darle un borde al contenedor */
+                    padding: 15px; /* Opcional: para agregar espacio alrededor */
+                    margin-bottom: 10px; /* Opcional: para separar de otros elementos */
+                  }
+                  .info-texto-perfil {
+                    display: flex;
+                  flex-direction: column; /* Organiza los campos de texto verticalmente */
+                    gap: 10px; /* Espacio entre cada línea de información (label + dato) */
+                  }   
+        /* Fondo pantalla CSS (pie de pagina) */   
+
+ /* login de seccion (central de pagina) */         
+body {
+  margin: 0;
+    padding: 0;
+  background-image: url("../imagen/fondo.jpg"); /* Ajusta la ruta según la ubicación de tu imagen */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* Puedes agregar otras propiedades como background-position aquí */
+}
+
+body.login-body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('../imagen/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: white;
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-logo {
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.login-header h2 {
+  color: #0ea5e9;
+  margin-bottom: 1em;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-button {
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background-color: #0284c7;
+}
+
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.login-links a {
+  color: #0ea5e9;
+  text-decoration: none;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+
+.credit {
+  margin-top: 15px;
+  font-size: 0.75rem;
+  color: gray;
+}
+
+/* --- Estilos para el Modal ingreso --- */
+
+/* El fondo oscuro que cubre toda la página */
+.modal-overlay {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Se queda fijo en la pantalla, incluso al hacer scroll */
+  z-index: 1000; /* Se asegura que esté por encima de todo lo demás */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+
+  /* Magia para centrar el contenido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* El botón para cerrar (la 'X') */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer; /* Cambia el cursor a una manito */
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+/* Estilo opcional para el botón que abre el modal */
+#openModalBtn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#openModalBtn:hover {
+  background-color: #0056b3;
+}
