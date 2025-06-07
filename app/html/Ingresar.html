@@ -4,12 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css" />
-  </head>
+  <link rel="stylesheet" href="css/estilos.css" />
   <title>ingresar</title>
   <style>
     body {
@@ -38,70 +33,43 @@
 
 <body>
   <header>
-
     <div style="text-align: center;">
       <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
     </div>
   </header>
   <div id="menu">
-
     <nav class="nav-menu">
       <ul>
-        <nav class="nav-menu">
-          <ul>
-            <li><a href="DEINTEC WEB.html">Home</a></li>
-            <li><button id="openModalBtn">Iniciar Sesión</button></li>
-          </ul>
-        </nav>
+        <li><a href="DEINTEC WEB.html">Home</a></li>
+        <li><button id="openModalBtn">Iniciar Sesión</button></li>
+      </ul>
+    </nav>
+  </div>
+  <div id="loginModal" class="modal-overlay">
 
-        <div id="loginModal" class="modal-overlay">
+    <div class="modal-content">
 
-          <div class="modal-content">
+      <span class="close-button">&times;</span>
 
-            <span class="close-button">&times;</span>
+      <div class="login-container">
+        <div class="login-header">
+          <img src="imagen/deintec-imagen.png" alt="Logo" class="login-logo">
+          <h2>Inicia sesión ahora</h2>
+        </div>
+        <form action="controllers/login.php" method="post">
+          <input type="email" id="email" placeholder="Enter your Username" required name="email" />
+          <input type="password" id="password" placeholder="Enter your Password" required name="password" />
 
-            <div class="login-container">
-              <div class="login-header">
-                <img src="imagen/deintec-imagen.png" alt="Logo" class="login-logo">
-                <h2>Inicia sesión ahora</h2>
-              </div>
-              <form onsubmit="signIn(); return false;">
-                <input type="email" id="email" placeholder="Enter your Username" required />
-                <input type="password" id="password" placeholder="Enter your Password" required />
+          <button type="submit" class="login-button">Entrar</button>
 
-                <button type="submit" class="login-button">ACCESO</button>
+          <div class="login-links">
+            <a href="reguistro.html">¿No tienes una cuenta?</a>
+            <a href="olvido contraseña.php">¿Se te olvidó tu contraseña?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
 
-                <div class="login-links">
-                  <a href="#">¿No tienes una cuenta?</a>
-                  <a href="olvido_contraseña.php">¿Se te olvidó tu contraseña?</a>
-                </div>
-              </form>
-            </div>
-            <script>
-              const genericEmail = "usuario@generico.com"; // Replace with your desired generic email
-              const genericPassword = "contrasenaGenerica"; // Replace with your desired generic password
-              const popup = document.getElementById('popup');
-
-              function signIn() {
-                const enteredEmail = document.getElementById('email').value;
-                const enteredPassword = document.getElementById('password').value;
-
-                if (enteredEmail === genericEmail && enteredPassword === genericPassword) {
-                  // Simulate successful login
-                  console.log("Inicio de sesión exitoso (inseguro)");
-                  showPopup();
-                  // In a real application, you would typically set a session or token here.
-                } else {
-                  alert("Credenciales incorrectas");
-                }
-              }
-
-              function showPopup() {
-                popup.style.display = 'block';
-              }
-
-              function closePopup() {
-                popup.style.display = 'none';
-              }
-            </script>
-            <script>
+</html>
