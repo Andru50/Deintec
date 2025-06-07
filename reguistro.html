@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css"/>
+    <link rel="stylesheet" href="css/estilos.css" />
     <title>Solicitud de reguistro</title>
     <style>
         body {
@@ -15,14 +16,17 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
+
         h1 {
             font-size: 3em;
             text-align: center;
         }
+
         p {
             font-size: 1.2rem;
             line-height: 1.2;
         }
+
         /* Estilos para el formulario de registro */
         .registro-form {
             max-width: 400px;
@@ -30,12 +34,14 @@
             padding: 20px;
             background: #fff;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .registro-form h2 {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .registro-form input {
             width: 100%;
             padding: 10px;
@@ -43,6 +49,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+
         .registro-form button {
             width: 100%;
             padding: 10px;
@@ -53,11 +60,13 @@
             cursor: pointer;
             font-size: 16px;
         }
+
         .registro-form button:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
+
 <body>
     <header style="text-align: center;">
         <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
@@ -73,14 +82,18 @@
     </div>
 
     <div class="registro-form">
-        <h2>Crear  Cuenta</h2>
-        <form action="perfil.html" method="POST">
-            <input type="text" name="nombre" placeholder="Nombre Completo" required>
-            <input type="email" name="email" placeholder="Correo Electrónico" required>
+        <h2>Crear Cuenta</h2>
+        <form action="controllers/registro.php" method="post" enctype="multipart/form-data">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="text" name="cedula" placeholder="Cédula" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
             <input type="password" name="password" placeholder="Contraseña" required>
-            <input type="comnfirmacion password" name="password" placeholder=" Confirmacion de Contraseña" required>
+            <input type="text" name="ubicacion" placeholder="Ubicación">
+            <input type="text" name="telefono" placeholder="Teléfono">
+            <input type="file" name="imagen">
             <button type="submit">Registrar</button>
         </form>
     </div>
-    </body>
+</body>
+
 </html>

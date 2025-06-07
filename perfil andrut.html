@@ -1,90 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/estilos.css"/>
-    </head>
-    <title>perfil</title>
-        <style>
-        body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f4f4f4; /* Si quieres un color de respaldo */
-          background-image: url("imagen/fondo.jpg"); /* La ruta desde el HTML */
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-      
-        h1 {
-          font-size: 3em;
-          text-align: center;
-        }
-      
-        p {
-          font-size: 1.2rem;
-          line-height: 1.2;
-        }
-        </style>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <title>perfil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      /* Si quieres un color de respaldo */
+      background-image: url("imagen/fondo.jpg");
+      /* La ruta desde el HTML */
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+  </style>
 </head>
-  <nav>
-      Perfil de usuario
-  </nav> 
-      <div style="text-align: center;">
-          <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
-      </div>
-        </body> 
-        
-    <nav>
-        <ul>
-            <li><a href="DEINTEC WEB.html">Home</a></li>
-              <li><a href="Solicitudes activas.html">Solicitudes activas</a></li>
-              <li><a href="Solicitudes radicadas.html">Solicitudes radicadas</a></li>
-              <li><a href="Permisos.html">Permisos</a></li>
-              <div style="display: inline-block;"></div>
-        </ul>
-    </nav>
+<nav>
+  Perfil de usuario
+</nav>
+<div style="text-align: center;">
+  <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
+</div>
+</body>
+
+<nav>
+  <ul>
+    <li><a href="DEINTEC WEB.html">Home</a></li>
+    <li><a href="Solicitudes activas.html">Solicitudes activas</a></li>
+    <li><a href="Solicitudes radicadas.html">Solicitudes radicadas</a></li>
+    <li><a href="Permisos.html">Permisos</a></li>
+    <div style="display: inline-block;"></div>
+  </ul>
+</nav>
+
 <body>
-      <label>Imagen de perfil:</label>
-      <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*">
-            <button type="submit">Actualizar Perfil</button>
-        </form>
+  <label>Imagen de perfil:</label>
+  <input type="file" id="imagenPerfil" name="imagenPerfil" accept="image/*">
+  <button type="submit">Actualizar Perfil</button>
+  </form>
 
   <button class="logout" onclick="cerrarSesion()">Cerrar Sesión</button>
   </div>
   <script>
-  // Vista previa de imagen
-  document.getElementById('imagenPerfil').addEventListener('change', function (event) {
-    const archivo = event.target.files[0];
-    if (archivo) {
-      const lector = new FileReader();
-      lector.onload = function(e) {
-        document.getElementById('preview').src = e.target.result;
-      };
-      lector.readAsDataURL(archivo);
+    // Vista previa de imagen
+    document.getElementById('imagenPerfil').addEventListener('change', function (event) {
+      const archivo = event.target.files[0];
+      if (archivo) {
+        const lector = new FileReader();
+        lector.onload = function (e) {
+          document.getElementById('preview').src = e.target.result;
+        };
+        lector.readAsDataURL(archivo);
+      }
+    });
+
+    // Enviar datos del formulario
+    document.getElementById('formPerfil').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Aquí enviarías los datos al servidor con fetch o AJAX
+      alert("Perfil actualizado (simulado).");
+    });
+
+    // Función para cerrar sesión
+    function cerrarSesion() {
+      // Aquí deberías redirigir o limpiar la sesión del usuario
+      alert("Sesión cerrada (simulado).");
+      window.location.href = "DEINTEC WEB.html"; // por ejemplo
     }
-  });
-
-  // Enviar datos del formulario
-  document.getElementById('formPerfil').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Aquí enviarías los datos al servidor con fetch o AJAX
-    alert("Perfil actualizado (simulado).");
-  });
-
-  // Función para cerrar sesión
-  function cerrarSesion() {
-    // Aquí deberías redirigir o limpiar la sesión del usuario
-    alert("Sesión cerrada (simulado).");
-    window.location.href = "DEINTEC WEB.html"; // por ejemplo
-  }
-</script>
-    <style>
-      
+  </script>
+  <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -162,55 +166,57 @@
       color: #007bff;
     }
   </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Perfil</h1>
-    <p class="subtitulo">Soy un desarrollador web PHP creativo</p>
+  </head>
 
-    <div class="perfil-grid">
-      <!-- Columna izquierda -->
-      <div class="columna">
-        <h2>Acerca de mí</h2>
-        <p>
-       <strong>Cargo:</strong> Administrador web principal
-        <strong>Experiencia:</strong> 6 meses en desarrollo
-        <strong>Habilidades:</strong> PHP, JavaScript, HTML, CSS
-        </p>
-        <p><small>Imagen de <a href="https://www.freepik.com" target="_blank">Freepik</a></small></p>
-      </div>
+  <body>
+    <div class="container">
+      <h1>Perfil</h1>
+      <p class="subtitulo">Soy un desarrollador web PHP creativo</p>
 
-      <!-- Columna central -->
-      <div class="columna" style="text-align: center;">
-        <img src="imagen/Perfil/Andre.png" alt="Foto de perfil">
-      </div>
+      <div class="perfil-grid">
+        <!-- Columna izquierda -->
+        <div class="columna">
+          <h2>Acerca de mí</h2>
+          <p>
+            <strong>Cargo:</strong> Administrador web principal
+            <strong>Experiencia:</strong> 6 meses en desarrollo
+            <strong>Habilidades:</strong> PHP, JavaScript, HTML, CSS
+          </p>
+          <p><small>Imagen de <a href="https://www.freepik.com" target="_blank">Freepik</a></small></p>
+        </div>
 
-      <!-- Columna derecha -->
-      <div class="columna detalles">
-        <h2>Detalles</h2>
-        <strong>ID:</strong> 0001
-        <strong>Nombre:</strong> hector andres monroy 
-        <strong>Edad:</strong> 27 años
-        <strong>Ubicación:</strong> Bogota D.c
+        <!-- Columna central -->
+        <div class="columna" style="text-align: center;">
+          <img src="imagen/Perfil/Andre.png" alt="Foto de perfil">
+        </div>
 
-        <div class="social">
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-instagram"></i></a>
+        <!-- Columna derecha -->
+        <div class="columna detalles">
+          <h2>Detalles</h2>
+          <strong>ID:</strong> 0001
+          <strong>Nombre:</strong> hector andres monroy
+          <strong>Edad:</strong> 27 años
+          <strong>Correo:</strong> hector_monroy@soy.sena.edu.co
+          <strong>Ubicación:</strong> Bogota D.c
+
+          <div class="social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     </div>
-</ul>
+    </ul>
 
     <footer>
-</footer>
-</body>
-</html>
+    </footer>
+  </body>
 
+</html>
