@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Formulario Solicitud de Mantenimiento</title>
+  <title>Solicitud de Mantenimiento</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
@@ -44,8 +44,8 @@
       color: white;
     }
     form {
-      max-width: 600px;
-      margin: 20px auto;
+      max-width: 700px;
+      margin: 30px auto;
       background: rgba(40,40,40,0.9);
       padding: 25px 30px;
       border-radius: 10px;
@@ -56,7 +56,7 @@
       font-weight: 600;
       margin-top: 10px;
     }
-    form input[type=text], form textarea, form select {
+    form input[type=text], form input[type=email], form textarea, form select {
       width: 100%;
       padding: 8px;
       border-radius: 6px;
@@ -67,7 +67,11 @@
       font-size: 1rem;
       resize: vertical;
     }
-    form button {
+    form input[type=file] {
+      color: #eee;
+      margin-top: 5px;
+    }
+    form button[type="submit"] {
       background-color: #d20505;
       border: none;
       color: black;
@@ -80,22 +84,38 @@
       font-size: 1.1rem;
       transition: background-color 0.3s;
     }
-    form button:hover {
+    form button[type="submit"]:hover {
       background-color: #a30000;
       color: white;
     }
-    #confirmacion {
-      max-width: 600px;
-      margin: 15px auto;
+    #confirmacion_radicado {
+      max-width: 700px;
+      margin: 20px auto;
       background-color: #28a745;
       color: white;
-      padding: 15px;
+      padding: 20px;
       border-radius: 8px;
       text-align: center;
-      font-weight: 700;
       font-size: 1.2rem;
+      font-weight: bold;
       box-shadow: 0 0 10px #28a745aa;
       display: none;
+    }
+    #btn-home {
+      display: inline-block;
+      background-color: #d20505;
+      color: black;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 6px;
+      margin-top: 15px;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    #btn-home:hover {
+      background-color: #a30000;
+      color: white;
     }
   </style>
 </head>
@@ -107,19 +127,34 @@
 
 <nav>
   <ul>
-    <li><a href="formulario.html">Formulario</a></li>
-    <li><a href="solicitudes.html">Solicitudes Radicadas</a></li>
+    <li><a href="DEINTEC WEB.html">Home</a></li>
+    <li><a href="catalogo.html">Catalogo de servicios</a></li>
   </ul>
 </nav>
 
-<form id="form-solicitud">
-  <h2>Formulario de Solicitud de Mantenimiento</h2>
+<form id="form-mantenimiento">
+  <h2>Solicitud de Mantenimiento</h2>
+  <p>Por favor, diligencie el siguiente formulario para registrar una solicitud de mantenimiento.</p>
 
-  <label for="solicitante">Nombre del Solicitante:</label>
-  <input type="text" id="solicitante" name="solicitante" required placeholder="Tu nombre" />
+  <label for="nombre">Nombre del Solicitante:</label>
+  <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
 
-  <label for="descripcion">Descripción:</label>
-  <textarea id="descripcion" name="descripcion" rows="4" required placeholder="Describe tu solicitud"></textarea>
+  <label for="correo">Correo Electrónico:</label>
+  <input type="email" id="correo" name="correo" required placeholder="correo@ejemplo.com" />
+
+  <label for="telefono">Teléfono de Contacto:</label>
+  <input type="text" id="telefono" name="telefono" required placeholder="Número de teléfono" />
+
+  <label for="tipo_mantenimiento">Tipo de Mantenimiento:</label>
+  <select id="tipo_mantenimiento" name="tipo_mantenimiento" required>
+    <option value="">Seleccione tipo de mantenimiento</option>
+    <option value="preventivo">Mantenimiento Preventivo</option>
+    <option value="correctivo">Mantenimiento Correctivo</option>
+    <option value="otro">Otro</option>
+  </select>
+
+  <label for="descripcion">Descripción del Mantenimiento:</label>
+  <textarea id="descripcion" name="descripcion" rows="6" required placeholder="Describa el mantenimiento requerido..."></textarea>
 
   <label for="estado">Estado:</label>
   <select id="estado" name="estado" required>
@@ -127,14 +162,22 @@
     <option value="Resuelta">Resuelta</option>
   </select>
 
+  <label for="imagen">Subir Imagen (opcional):</label>
+  <input type="file" id="imagen" name="imagen" accept="image/*" />
+
   <button type="submit">Enviar Solicitud</button>
 </form>
 
-<div id="confirmacion"></div>
+<div id="confirmacion_radicado">
+  <h3>¡Solicitud registrada con éxito!</h3>
+  <p>Número de radicado: <span id="numero_radicado"></span></p>
+  <a id="btn-home" href="DEINTEC WEB.html">Volver al Inicio</a>
+</div>
 
 <script>
-  const form = document.getElementById('form-solicitud');
-  const confirmacion = document.getElementById('confirmacion');
+  const form = document.getElementById('form-mantenimiento');
+  const confirmacion = document.getElementById('confirmacion_radicado');
+  const numeroSpan = document.getElementById('numero_radicado');
 
   function generarNumeroRadicado() {
     const now = new Date();
@@ -151,38 +194,53 @@
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const solicitante = form.solicitante.value.trim();
+    const nombre = form.nombre.value.trim();
+    const correo = form.correo.value.trim();
+    const telefono = form.telefono.value.trim();
+    const tipoMantenimiento = form.tipo_mantenimiento.value;
     const descripcion = form.descripcion.value.trim();
     const estado = form.estado.value;
+    const imagen = form.imagen.files[0] ? form.imagen.files[0].name : null;
 
-    if (!solicitante || !descripcion) {
-      alert('Por favor complete todos los campos.');
+    if (!nombre || !correo || !telefono || !tipoMantenimiento || !descripcion || !estado) {
+      alert('Por favor complete todos los campos requeridos.');
       return;
     }
 
+    const radicado = generarNumeroRadicado();
     const fecha = new Date().toISOString().split('T')[0];
-    const numeroRadicado = generarNumeroRadicado();
 
     const nuevaSolicitud = {
       fecha,
-      solicitante,
+      solicitante: nombre,
+      correo,
+      telefono,
+      tipoMantenimiento,
       descripcion,
       estado,
-      numeroRadicado,
+      imagen,
+      numeroRadicado: radicado
     };
 
-    // Obtener array actual o crear nuevo
     const solicitudes = JSON.parse(localStorage.getItem('solicitudes')) || [];
     solicitudes.push(nuevaSolicitud);
     localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
 
-    form.reset();
+    if (estado === "En proceso") {
+      const activas = JSON.parse(localStorage.getItem('activas')) || [];
+      activas.push(nuevaSolicitud);
+      localStorage.setItem('activas', JSON.stringify(activas));
+    }
 
-    confirmacion.textContent = `¡Solicitud enviada con éxito! Número de radicado: ${numeroRadicado}`;
+    numeroSpan.textContent = radicado;
     confirmacion.style.display = 'block';
+    form.style.display = 'none';
   });
 </script>
 
 </body>
-</html>
+</html
+
+
+
 
