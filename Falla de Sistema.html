@@ -1,111 +1,246 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/estilos.css"/>
-    </head>
-    <title>solicitud mantenimiento</title>
-        <style>
-        body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f4f4f4; /* Si quieres un color de respaldo */
-          background-image: url("imagen/fondo.jpg"); /* La ruta desde el HTML */
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-      
-        h1 {
-          font-size: 3em;
-          text-align: center;
-        }
-      
-        p {
-          font-size: 1.2rem;
-          line-height: 1.2;
-        }
-        </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reporte de Falla de Sistema</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #131212;
+      background-image: url("imagen/fondo.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      color: #f5f5f5;
+    }
+    header, nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      background-color: #d20505;
+      margin: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      margin: 0;
+    }
+    nav ul li a {
+      display: inline-block;
+      color: black;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      font-size: 1rem;
+    }
+    nav ul li a:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+    form {
+      max-width: 700px;
+      margin: 30px auto;
+      background: rgba(40,40,40,0.9);
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+      color: #eee;
+    }
+    form label {
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    form input[type=text], form input[type=email], form textarea, form select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 5px;
+      background-color: #222;
+      color: #eee;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    form input[type=file] {
+      color: #eee;
+      margin-top: 5px;
+    }
+    form button[type="submit"] {
+      background-color: #d20505;
+      border: none;
+      color: black;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+    form button[type="submit"]:hover {
+      background-color: #a30000;
+      color: white;
+    }
+    #confirmacion_radicado {
+      max-width: 700px;
+      margin: 20px auto;
+      background-color: #28a745;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 0 10px #28a745aa;
+      display: none;
+    }
+    /* Botón para volver a inicio */
+    #btn-home {
+      display: inline-block;
+      background-color: #d20505;
+      color: black;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 6px;
+      margin-top: 15px;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    #btn-home:hover {
+      background-color: #a30000;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        
-        <div style="text-align: center;">
-            <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
-        </div>
-    </header>
-        <div id="menu">
-            
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="DEINTEC WEB.html">Home</a></li>
-                    <li><a href="#">Formulario de solicitud</a></li>
-                </ul>
-            </nav>
-        </div>
-    </nav>
-<body>
-    <section>
-        <h2 label for>Reporte de Falla de Sistema de PC</label>
-        <p>Por favor, diligenciar el siguiente formulario para registrar una falla de sistema en su PC con el fin de poder ayudarte.</p>
-        <form action="procesar_falla.php" method="post" enctype="multipart/form-data">
-            <div>
-                <label for="tipo_falla">Tipo de Falla:</label>
-                <select id="tipo_falla" name="tipo_falla" required>
-                    <option value="">Seleccione un tipo de falla</option>
-                    <option value="hardware">Falla de Hardware</option>
-                    <option value="software">Falla de Software</option>
-                    <option value="red">Falla de Red</option>
-                    <option value="otro">Otro</option>
-                </select>
-            </div>
-            <div>
-                <label for="descripcion">Descripción de la Falla:</label>
-                <textarea id="descripcion" name="descripcion" rows="15" cols="190"  required></textarea>
-            </div>
-            <div>
-                <label>Métodos de Contacto:</label>
-                <div>
-                    <input type="checkbox" id="contacto_email" name="contacto[]" value="email">
-                    <label for="contacto_email">Correo Electrónico</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="contacto_telefono" name="contacto[]" value="telefono">
-                    <label for="contacto_telefono">Teléfono</label>
-                </div>
-            </div>
-            <div>
-                <label for="imagen">Subir Imagen (opcional):</label>
-                <input type="file" id="imagen" name="imagen" accept="image/*">
-            </div>
-            <button type="submit">Registrar Falla</button>
-        </form>
 
-        <div id="confirmacion_radicado" style="display:none;">
-            <h3>Número de Radicado:</h3>
-            <p id="numero_radicado"></p>
-        </div>
-    </section>
+<header>
+  <img src="imagen/deintec-imagen.png" alt="Logo" width="350" height="110" />
+</header>
 
-    <footer>
-        </footer>
+<nav>
+  <ul>
+    <li><a href="DEINTEC WEB.html">Home</a></li>
+    <li><a href="catalogo.html">Catalogo de servicios</a></li>
+  </ul>
+</nav>
 
-    <script>
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita el envío automático del formulario por ahora
+<form id="form-falla">
+  <h2>Reporte de Falla de Sistema de PC</h2>
+  <p>Por favor, diligencie el siguiente formulario para registrar una falla en su equipo.</p>
 
-            // Aquí iría la lógica para enviar los datos al servidor (AJAX)
-            // Simulamos una respuesta exitosa y mostramos el número de radicado
-            const numeroRadicadoGenerado = Math.floor(Math.random() * 1000000); // Generar un número aleatorio como ejemplo
+  <label for="nombre">Nombre del Solicitante:</label>
+  <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
 
-            document.getElementById('numero_radicado').textContent = numeroRadicadoGenerado;
-            document.getElementById('confirmacion_radicado').style.display = 'block';
-            document.querySelector('form').style.display = 'none'; // Ocultar el formulario después del registro simulado
-        });
-    </script>
+  <label for="correo">Correo Electrónico:</label>
+  <input type="email" id="correo" name="correo" required placeholder="correo@ejemplo.com" />
+
+  <label for="telefono">Teléfono de Contacto:</label>
+  <input type="text" id="telefono" name="telefono" required placeholder="Número de teléfono" />
+
+  <label for="tipo_falla">Tipo de Falla:</label>
+  <select id="tipo_falla" name="tipo_falla" required>
+    <option value="">Seleccione un tipo de falla</option>
+    <option value="hardware">Falla de Hardware</option>
+    <option value="software">Falla de Software</option>
+    <option value="red">Falla de Red</option>
+    <option value="otro">Otro</option>
+  </select>
+
+  <label for="descripcion">Descripción de la Falla:</label>
+  <textarea id="descripcion" name="descripcion" rows="6" required placeholder="Describa el problema..."></textarea>
+
+  <label for="estado">Estado:</label>
+  <select id="estado" name="estado" required>
+    <option value="En proceso">En proceso</option>
+    <option value="Resuelta">Resuelta</option>
+  </select>
+
+  <label for="imagen">Subir Imagen (opcional):</label>
+  <input type="file" id="imagen" name="imagen" accept="image/*" />
+
+  <button type="submit">Registrar Falla</button>
+</form>
+
+<div id="confirmacion_radicado">
+  <h3>¡Falla reportada con éxito!</h3>
+  <p>Número de radicado: <span id="numero_radicado"></span></p>
+  <a id="btn-home" href="DEINTEC WEB.html">Volver al Inicio</a>
+</div>
+
+<script>
+  const form = document.getElementById('form-falla');
+  const confirmacion = document.getElementById('confirmacion_radicado');
+  const numeroSpan = document.getElementById('numero_radicado');
+
+  function generarNumeroRadicado() {
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+    const hh = String(now.getHours()).padStart(2, '0');
+    const min = String(now.getMinutes()).padStart(2, '0');
+    const ss = String(now.getSeconds()).padStart(2, '0');
+    const random = String(Math.floor(Math.random() * 10000)).padStart(4, '0');
+    return `RAD-${yyyy}${mm}${dd}-${hh}${min}${ss}-${random}`;
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nombre = form.nombre.value.trim();
+    const correo = form.correo.value.trim();
+    const telefono = form.telefono.value.trim();
+    const tipoFalla = form.tipo_falla.value;
+    const descripcion = form.descripcion.value.trim();
+    const estado = form.estado.value;
+    const imagen = form.imagen.files[0] ? form.imagen.files[0].name : null;
+
+    if (!nombre || !correo || !telefono || !tipoFalla || !descripcion || !estado) {
+      alert('Por favor complete todos los campos requeridos.');
+      return;
+    }
+
+    const radicado = generarNumeroRadicado();
+    const fecha = new Date().toISOString().split('T')[0];
+
+    const nuevaSolicitud = {
+      fecha,
+      solicitante: nombre,
+      correo,
+      telefono,
+      tipoFalla,
+      descripcion,
+      estado,
+      imagen,
+      numeroRadicado: radicado
+    };
+
+    // Guardar en solicitudes radicadas (todas)
+    const solicitudes = JSON.parse(localStorage.getItem('solicitudes')) || [];
+    solicitudes.push(nuevaSolicitud);
+    localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
+
+    // Si está en proceso, guardar también en activas
+    if (estado === "En proceso") {
+      const activas = JSON.parse(localStorage.getItem('activas')) || [];
+      activas.push(nuevaSolicitud);
+      localStorage.setItem('activas', JSON.stringify(activas));
+    }
+
+    numeroSpan.textContent = radicado;
+    confirmacion.style.display = 'block';
+    form.style.display = 'none';
+  });
+</script>
+
 </body>
 </html>
