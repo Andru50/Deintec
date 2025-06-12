@@ -1,6 +1,8 @@
 <?php
 $id=$_GET['id'];
-requiier_once 'conexion.php';
+// ...existing code...
+require_once 'conexion.php';
+// ...existing code...
 $conexion = new mysqli($servidor, $usuario, $password, $baseDatos);
 $sql = "DELETE FROM servicios WHERE id = $id";
 $conexion->query($sql);

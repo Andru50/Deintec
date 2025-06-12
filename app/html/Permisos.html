@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitudes Activas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #131212;
+            background-image: url("imagen/fondo.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, .container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            background-color: #d20505;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0;
+        }
+        nav ul li a {
+            display: inline-block;
+            color: rgb(0, 0, 0);
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #0056b3;
+        }
+        .solicitud {
+            background: white;
+            max-width: 600px;
+            margin: 15px auto;
+            padding: 20px;
+            border-left: 6px solid #007BFF;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            text-align: left;
+        }
+        .solicitud h3 {
+            margin-top: 0;
+        }
+        .estado {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="imagen/deintec-imagen.png" alt="Logo" width="350" height="110">
+</header>
+
+<nav class="nav-menu">
+    <ul>
+        <li><a href="DEINTEC WEB.html">Home</a></li>
+        <li><a href="#">Permisos</a></li>
+        
+    </ul>
+</nav>
+    <meta charset="UTF-8">
+    <title>Permisos y Asignación de Cargos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Asignación de Cargos</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Cargo Actual</th>
+                    <th>Asignar Nuevo Cargo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ejemplo de personas, reemplaza por datos reales -->
+                <tr>
+                    <td>1</td>
+                    <td>Juan Pérez</td>
+                    <td>juan.perez@ejemplo.com</td>
+                    <td>Usuario</td>
+                    <td>
+                        <select class="form-control" onchange="asignarCargo(this, 'Juan Pérez')">
+                            <option value="">Seleccionar</option>
+                            <option value="Usuario">Usuario</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Supervisor">Supervisor</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>María López</td>
+                    <td>maria.lopez@ejemplo.com</td>
+                    <td>Supervisor</td>
+                    <td>
+                        <select class="form-control" onchange="asignarCargo(this, 'María López')">
+                            <option value="">Seleccionar</option>
+                            <option value="Usuario">Usuario</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Supervisor">Supervisor</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Agrega más filas según tus usuarios -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function asignarCargo(select, nombre) {
+            if(select.value) {
+                alert('Cargo "' + select.value + '" asignado a ' + nombre + ' (simulado).');
+                // Aquí puedes hacer una petición AJAX para guardar el cambio en el servidor
+            }
+        }
+    </script>
+</body>
+</html>

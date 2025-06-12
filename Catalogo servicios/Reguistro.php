@@ -8,7 +8,8 @@ include("conexion .php");
     $directorio = "imagenes/";
     $nombre=basename($_FILES['foto']['name']);
     $ruta=$directorio.$nombre;
-    $subido =move_uploadead_file ($tmp_name,$ruta);
+    $subido = move_uploaded_file($tmp_name, $ruta);
+// ...existing code...
     $query="INSERT INTO servicio (clave,nombre,cantidad,precio,imagen) VALUES ('$clave','$nombre_servicio','$cantidad','$precio','$ruta')";
     $resultado=mysqli_query($conexion,$query);
     if($resultado)
@@ -18,7 +19,7 @@ include("conexion .php");
      <img src='$ruta' /><br>
      Nombre: $Tipo_servicio<br>   
      Cantidad: $cantidad<br>
-     precio: $precio"   
+     precio: $precio";   
     }
     else
     {
