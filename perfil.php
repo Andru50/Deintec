@@ -58,31 +58,31 @@ session_start();
 
 <body>
   <form action="controllers/actualizar_imagen.php" method="POST" enctype="multipart/form-data">
-        
-        <label for="nueva_imagen">
-            <strong>Actualizar foto de perfil:</strong>
-        </label>
-        
-        <br><br>
-        
-        <input type="file" name="nueva_imagen" id="nueva_imagen" required>
-        
-        <br><br>
-        
-        <button type="submit" style=>Subir Nueva Imagen</button>
 
-    </form>
+    <label for="nueva_imagen">
+      <strong>Actualizar foto de perfil:</strong>
+    </label>
 
-    <?php
-    if (isset($_GET['status'])) {
-        if ($_GET['status'] == 'success') {
-            echo "<p style='color: green; margin-top: 15px;'>¡Imagen actualizada con éxito!</p>";
-        } elseif ($_GET['status'] == 'error') {
-            echo "<p style='color: red; margin-top: 15px;'>Error: No se pudo actualizar la imagen. Revisa el archivo o los permisos de la carpeta.</p>";
-        }
+    <br><br>
+
+    <input type="file" name="nueva_imagen" id="nueva_imagen" required>
+
+    <br><br>
+
+    <button type="submit" style=>Subir Nueva Imagen</button>
+
+  </form>
+
+  <?php
+  if (isset($_GET['status'])) {
+    if ($_GET['status'] == 'success') {
+      echo "<p style='color: green; margin-top: 15px;'>¡Imagen actualizada con éxito!</p>";
+    } elseif ($_GET['status'] == 'error') {
+      echo "<p style='color: red; margin-top: 15px;'>Error: No se pudo actualizar la imagen. Revisa el archivo o los permisos de la carpeta.</p>";
     }
-    ?>
-</div>
+  }
+  ?>
+  </div>
 
   <button class="logout" onclick="cerrarSesion()">Cerrar Sesión</button>
   </div>
