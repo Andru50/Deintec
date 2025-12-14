@@ -61,7 +61,7 @@
 
     <nav>
         <ul>
-            <li><a href="DEINTEC WEB.html">Inicio</a></li>
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="Permisos.php">Permisos</a></li>
         </ul>
     </nav>
@@ -81,10 +81,10 @@
             <tbody>
                 <?php
                 // Conexión a la base de datos
-                $servidor = "localhost";
-                $usuario_db = "root";
+                $servidor = "127.0.0.1";
+                $usuario_db = "deintec";
                 $password_db = "12345";
-                $nombre_db = "deintec_2";
+                $nombre_db = "deintec";
 
                 $conexion = new mysqli($servidor, $usuario_db, $password_db, $nombre_db);
 
