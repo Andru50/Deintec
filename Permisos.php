@@ -81,7 +81,7 @@
             <tbody>
                 <?php
                 // Conexión a la base de datos
-                $servidor = "localhost";
+                $servidor = "127.0.0.1";
                 $usuario_db = "deintec";
                 $password_db = "12345";
                 $nombre_db = "deintec";
@@ -93,7 +93,7 @@
                 }
 
                 // IMPORTANTE: Cambia 'nombre' y 'email' si en tu tabla se llaman diferente
-                $sql = "SELECT id AS id_usuario, `Nombre completo`, Email FROM usuarios";
+                $sql = "SELECT id_usuario, `Nombre completo`, Email FROM usuarios";
                 $resultado = $conexion->query($sql);
 
                 if ($resultado->num_rows > 0) {

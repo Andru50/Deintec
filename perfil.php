@@ -48,7 +48,7 @@ session_start();
 
 <nav>
   <ul>
-    <li><a href="DEINTEC WEB.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="Solicitudes activas.html">Solicitudes activas</a></li>
     <li><a href="Solicitudes radicadas.html">Solicitudes radicadas</a></li>
     <li><a href="Permisos.php">Permisos</a></li>
@@ -110,7 +110,7 @@ session_start();
     function cerrarSesion() {
       // Aquí deberías redirigir o limpiar la sesión del usuario
       alert("Sesión cerrada (simulado).");
-      window.location.href = "DEINTEC WEB.html"; // por ejemplo
+      window.location.href = "index.html"; // por ejemplo
     }
   </script>
   <style>
