@@ -61,7 +61,7 @@
 
     <nav>
         <ul>
-            <li><a href="DEINTEC WEB.html">Inicio</a></li>
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="Permisos.php">Permisos</a></li>
         </ul>
     </nav>
@@ -82,9 +82,9 @@
                 <?php
                 // Conexión a la base de datos
                 $servidor = "localhost";
-                $usuario_db = "root";
+                $usuario_db = "deintec";
                 $password_db = "12345";
-                $nombre_db = "deintec_2";
+                $nombre_db = "deintec";
 
                 $conexion = new mysqli($servidor, $usuario_db, $password_db, $nombre_db);
 
@@ -93,7 +93,7 @@
                 }
 
                 // IMPORTANTE: Cambia 'nombre' y 'email' si en tu tabla se llaman diferente
-                $sql = "SELECT id_usuario, `Nombre completo`, Email FROM usuarios";
+                $sql = "SELECT id AS id_usuario, `Nombre completo`, Email FROM usuarios";
                 $resultado = $conexion->query($sql);
 
                 if ($resultado->num_rows > 0) {

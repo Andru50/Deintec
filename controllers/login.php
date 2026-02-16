@@ -1,5 +1,5 @@
 <?php
-require '../conexion.php'; // Asegúrate que la ruta es correcta
+require '../config/conexion.php'; // Asegúrate que la ruta es correcta
 
 $pass = $_POST['password'];
 $email = $_POST['email'];
