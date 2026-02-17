@@ -180,6 +180,11 @@
 
 <div class="container-table">
   <h2>Solicitudes Activas</h2>
+  <h2 class="text-white text-center mb-4">Solicitudes Radicadas (Historial)</h2>
+    
+    <div class="text-right mb-3">
+        <button onclick="exportarExcel()" class="btn btn-success">Descargar Excel</button>
+    </div>
   <table>
     <thead>
       <tr>
@@ -232,49 +237,15 @@
             </tbody>
 </div> 
 <script>
-  const tbody = document.getElementById('solicitudes-body');
-
-  function cargarSolicitudesActivas() {
-    const solicitudes = JSON.parse(localStorage.getItem('solicitudes')) || [];
-    // Filtrar solo las solicitudes con estado "en proceso"
-    const solicitudesActivas = solicitudes.filter(sol => sol.estado.toLowerCase() === 'en proceso');
-    tbody.innerHTML = '';
-
-    solicitudesActivas.forEach((sol, index) => {
-      const badgeClass = 'badge-warning';
-
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>${index + 1}</td>
-        <td>${sol.fecha}</td>
-        <td>${sol.solicitante}</td>
-        <td>${sol.descripcion}</td>
-        <td><span class="${badgeClass}">${sol.estado}</span></td>
-        <td>${sol.numeroRadicado}</td>
-        <td><button class="btn-eliminar" data-radicado="${sol.numeroRadicado}">Eliminar</button></td>
-      `;
-      tbody.appendChild(tr);
-    });
-
-    // Añadir event listeners para eliminar
-    document.querySelectorAll('.btn-eliminar').forEach(button => {
-      button.addEventListener('click', (e) => {
-        const radicado = e.target.getAttribute('data-radicado');
-        eliminarSolicitud(radicado);
-      });
-    });
-  }
-
-  function eliminarSolicitud(radicado) {
-    let solicitudes = JSON.parse(localStorage.getItem('solicitudes')) || [];
-    // Filtrar todas excepto la que tenga ese número de radicado
-    solicitudes = solicitudes.filter(sol => sol.numeroRadicado !== radicado);
-    localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
-    cargarSolicitudesActivas();
-  }
-
-  // Cargar solicitudes activas al abrir la página
-  cargarSolicitudesActivas();
+function exportarExcel() {
+    var tabla = document.querySelector("table");
+    var html = tabla.outerHTML;
+    var url = 'data:application/vnd.ms-excel,' + encodeURIComponent(html);
+    var link = document.createElement("a");
+    link.download = "Historial_Deintec.xls";
+    link.href = url;
+    link.click();
+}
 </script>
 
 </body>
