@@ -62,6 +62,7 @@
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
+            <li><a href="perfil.php">perfil</a></li>
             <li><a href="Permisos.php">Permisos</a></li>
         </ul>
     </nav>

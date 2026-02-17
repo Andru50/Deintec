@@ -171,6 +171,7 @@
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
+    <li><a href="perfil.php">perfil</a></li>
     <li><a href="Solicitudes radicadas.php">Solicitudes Radicadas</a></li>
     <li><a href="https://lookerstudio.google.com/reporting/93a1af02-1588-45f0-b785-a0eae496432c/page/PZvoF/edit">Dashboard Gráficas</a></li>
   </ul>
@@ -182,19 +183,54 @@
   <table>
     <thead>
       <tr>
-        <th>#</th>
-        <th>Fecha</th>
-        <th>Solicitante</th>
-        <th>Descripción</th>
-        <th>Estado</th>
-        <th>Número de radicado</th>
-        <th>Eliminar</th>
-      </tr>
-    </thead>
-    <tbody id="solicitudes-body"></tbody>
-  </table>
-</div>
+                <th>Fecha Cierre</th>
+                <th>Servicio</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th>Radicado #</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // Conexión a la base de datos
+            mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
+          try {
+           $conexion = new mysqli("127.0.0.1", "deintec", "12345", "deintec");
+
+          // Consulta escrita de forma simple para evitar caracteres ocultos
+          // Si 'idRegistro' falla, intentaremos con 'idregistro' (todo en minúscula)
+          $sql = "SELECT * FROM registro_servicios WHERE estado = 'Completado'";
+    
+          $resultado = $conexion->query($sql);
+
+          if ($resultado->num_rows > 0) {
+          while ($fila = $resultado->fetch_assoc()) {
+            echo "<tr>";
+            // Usamos nombres de columnas exactos. 
+            // Si tu DB tiene mayúsculas/minúsculas diferentes, el SELECT * las encontrará igual.
+            echo "<td>" . ($fila["fecha_finalizacion"] ?? 'N/A') . "</td>";
+            echo "<td>" . htmlspecialchars($fila["servicios"] ?? 'N/A') . "</td>";
+            echo "<td>" . htmlspecialchars($fila["descripcion"] ?? 'N/A') . "</td>";
+                        echo "<td>";
+                        echo "<select class='form-control' onchange='asignarEstados(this, " . $fila["servicios"] . ")'>";
+                        echo "<option value=''>Seleccionar</option>";
+                        echo "<option value='En proceso'>En proceso</option>";
+                        echo "<option value='completado'>completado</option>";
+            echo "<td>" . ($fila["idRegistro"] ?? $fila["idregistro"] ?? '0') . "</td>";
+            echo "</tr>";
+          }
+          } else {
+          echo "<tr><td colspan='5' class='text-center'>No hay registros con estado 'Completado'.</td></tr>";
+          }
+          $conexion->close();
+
+            } catch (Exception $e) {
+          echo "<tr><td colspan='5' class='text-center' style='color:red;'>Error real detectado: " . $e->getMessage() . "</td></tr>";
+          }
+          ?>
+            </tbody>
+</div> 
 <script>
   const tbody = document.getElementById('solicitudes-body');
 

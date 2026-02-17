@@ -12,79 +12,21 @@
       background-image: url("imagen/fondo.jpg");
       background-size: cover;
       background-repeat: no-repeat;
-      margin: 0;
-      padding: 0;
       color: #f5f5f5;
+      margin: 0; padding: 0;
     }
-    header, nav {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      background-color: #d20505;
-      margin: 0;
-    }
-    nav ul li {
-      display: inline-block;
-      margin: 0;
-    }
-    nav ul li a {
-      display: inline-block;
-      color: black;
-      padding: 15px 20px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s;
-      font-size: 1rem;
-    }
-    nav ul li a:hover {
-      background-color: #0056b3;
-      color: white;
-    }
-    h2 {
-      font-weight: 700;
-      margin-bottom: 30px;
-      font-size: 2rem;
-      color: #fff;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-    }
+    header, nav { text-align: center; margin-bottom: 20px; }
+    nav ul { list-style: none; padding: 0; background-color: #d20505; margin: 0; }
+    nav ul li { display: inline-block; }
+    nav ul li a { display: inline-block; color: black; padding: 15px 20px; text-decoration: none; font-weight: 600; }
+    nav ul li a:hover { background-color: #0056b3; color: white; }
     .container-table {
       max-width: 950px;
-      margin: 0 auto 60px auto;
+      margin: 50px auto;
       background: rgba(40, 40, 40, 0.85);
       border-radius: 10px;
-      padding: 30px 35px;
+      padding: 30px;
       box-shadow: 0 12px 25px rgba(0,0,0,0.7);
-    }
-    table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 12px;
-      font-size: 1rem;
-      color: #eee;
-    }
-    thead th {
-      color: #ccc;
-      font-weight: 600;
-      padding-bottom: 12px;
-      border-bottom: 2px solid #555;
-      text-align: left;
-    }
-    tbody tr {
-      background: rgba(60, 60, 60, 0.8);
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
-      transition: background-color 0.3s ease;
-      display: table-row;
-    }
-    tbody tr:hover {
-      background-color: rgba(80, 80, 80, 0.95);
-    }
-    tbody td {
-      padding: 14px 18px;
-      vertical-align: middle;
     }
     .badge-success {
       background-color: #28a745;
@@ -92,73 +34,7 @@
       padding: 7px 16px;
       border-radius: 20px;
       font-weight: 600;
-      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .badge-warning {
-      background-color: #ffc107;
-      color: #212529;
-      padding: 7px 16px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .btn-eliminar {
-      background-color: #d20505;
-      border: none;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .btn-eliminar:hover {
-      background-color: #a00404;
-    }
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container-table {
-        padding: 20px 15px;
-      }
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-      thead tr {
-        display: none;
-      }
-      tbody tr {
-        margin-bottom: 20px;
-        background: rgba(60,60,60,0.9);
-        border-radius: 10px;
-        padding: 15px;
-      }
-      tbody td {
-        padding-left: 50%;
-        position: relative;
-        text-align: left;
-        color: #ddd;
-        font-weight: 600;
-      }
-      tbody td::before {
-        position: absolute;
-        top: 50%;
-        left: 18px;
-        transform: translateY(-50%);
-        white-space: nowrap;
-        font-weight: 700;
-        color: #bbb;
-      }
-      tbody td:nth-of-type(1)::before { content: "#"; }
-      tbody td:nth-of-type(2)::before { content: "Fecha"; }
-      tbody td:nth-of-type(3)::before { content: "Solicitante"; }
-      tbody td:nth-of-type(4)::before { content: "Descripción"; }
-      tbody td:nth-of-type(5)::before { content: "Estado"; }
-      tbody td:nth-of-type(6)::before { content: "Número de radicado"; }
-      tbody td:nth-of-type(7)::before { content: "Eliminar"; }
     }
   </style>
 </head>
@@ -171,72 +47,78 @@
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="solicitudes activas.php">Solicitudes activas</a></li>
-    <li><a href="https://lookerstudio.google.com/reporting/93a1af02-1588-45f0-b785-a0eae496432c/page/PZvoF/edit">Dashboard Gráficas</a></li>
+    <li><a href="perfil.php">Perfil</a></li>
+    <li><a href="solicitudes activas.php">Solicitudes Activas</a></li>
+    <li><a href="https://lookerstudio.google.com/reporting/93a1af02-1588-45f0-b785-a0eae496432c/page/PZvoF/edit">Dashboard</a></li>
   </ul>
 </nav>
 
-<div class="container-table">
-  <h2>Solicitudes Radicadas</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Fecha</th>
-        <th>Solicitante</th>
-        <th>Descripción</th>
-        <th>Estado</th>
-        <th>Número de radicado</th>
-        <th>Eliminar</th>
-      </tr>
-    </thead>
-    <tbody id="solicitudes-body"></tbody>
-  </table>
-</div>
-<script>
-  const tbody = document.getElementById('solicitudes-body');
-
-  function cargarSolicitudes() {
+<div class="container container-table">
+    <h2 class="text-white text-center mb-4">Solicitudes Radicadas (Historial)</h2>
     
+    <div class="text-right mb-3">
+        <button onclick="exportarExcel()" class="btn btn-success">Descargar Excel</button>
+    </div>
 
-    solicitudes.forEach((sol, index) => {
-      let badgeClass = '';
-      switch(sol.estado.toLowerCase()) {
-        case 'resuelta': badgeClass = 'badge-success'; break;
-        case 'en proceso': badgeClass = 'badge-warning'; break;
-        default: badgeClass = '';
-      }
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>${index + 1}</td>
-        <td>${sol.fecha}</td>
-        <td>${sol.solicitante}</td>
-        <td>${sol.descripcion}</td>
-        <td><span class="${badgeClass}">${sol.estado}</span></td>
-        <td>${sol.numeroRadicado}</td>
-        <td><button class="btn-eliminar" data-index="${index}">Eliminar</button></td>
-      `;
-      tbody.appendChild(tr);
-    });
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Fecha Cierre</th>
+                <th>Servicio</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th>Radicado #</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // Conexión a la base de datos
+            mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    // Añadir event listeners para eliminar después de renderizar filas
-    document.querySelectorAll('.btn-eliminar').forEach(button => {
-      button.addEventListener('click', (e) => {
-        const index = e.target.getAttribute('data-index');
-        eliminarSolicitud(index);
-      });
-    });
-  }
+          try {
+           $conexion = new mysqli("127.0.0.1", "deintec", "12345", "deintec");
 
-  function eliminarSolicitud(index) {
-    const solicitudes = JSON.parse(localStorage.getItem('solicitudes')) || [];
-    solicitudes.splice(index, 1);
-    localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
-    cargarSolicitudes();
-  }
+          // Consulta escrita de forma simple para evitar caracteres ocultos
+          // Si 'idRegistro' falla, intentaremos con 'idregistro' (todo en minúscula)
+          $sql = "SELECT * FROM registro_servicios WHERE estado = 'Completado'";
+    
+          $resultado = $conexion->query($sql);
 
-  // Cargar solicitudes al abrir la página
-  cargarSolicitudes();
+          if ($resultado->num_rows > 0) {
+          while ($fila = $resultado->fetch_assoc()) {
+            echo "<tr>";
+            // Usamos nombres de columnas exactos. 
+            // Si tu DB tiene mayúsculas/minúsculas diferentes, el SELECT * las encontrará igual.
+            echo "<td>" . ($fila["fecha_finalizacion"] ?? 'N/A') . "</td>";
+            echo "<td>" . htmlspecialchars($fila["servicios"] ?? 'N/A') . "</td>";
+            echo "<td>" . htmlspecialchars($fila["descripcion"] ?? 'N/A') . "</td>";
+            echo "<td><span class='badge-success'>Finalizada</span></td>";
+            echo "<td>" . ($fila["idRegistro"] ?? $fila["idregistro"] ?? '0') . "</td>";
+            echo "</tr>";
+          }
+          } else {
+          echo "<tr><td colspan='5' class='text-center'>No hay registros con estado 'Completado'.</td></tr>";
+          }
+          $conexion->close();
+
+            } catch (Exception $e) {
+          echo "<tr><td colspan='5' class='text-center' style='color:red;'>Error real detectado: " . $e->getMessage() . "</td></tr>";
+          }
+          ?>
+        </tbody>
+    </table>
+</div>
+
+<script>
+function exportarExcel() {
+    var tabla = document.querySelector("table");
+    var html = tabla.outerHTML;
+    var url = 'data:application/vnd.ms-excel,' + encodeURIComponent(html);
+    var link = document.createElement("a");
+    link.download = "Historial_Deintec.xls";
+    link.href = url;
+    link.click();
+}
 </script>
 
 </body>
