@@ -66,33 +66,47 @@
 <nav class="nav-menu">
     <ul>
         <li><a href="DEINTEC WEB.html">Home</a></li>
+        <li><a href="perfil.php">Perfil</a></li>
         <li><a href="Solicitudes radicadas.html">Solicitudes radicadas</a></li>
         <li><a href="https://lookerstudio.google.com/reporting/93a1af02-1588-45f0-b785-a0eae496432c/page/PZvoF/edit">Dashboard Gráficas</a></li>
     </ul>
 </nav>
     <meta charset="UTF-8">
-    <title>reguistro servicios</title>
+    <title>registro_servicios</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-    <h2>Solicitudes Activas</h2>
-
-    <!-- Ejemplo de tarjeta de solicitud -->
-    <div class="solicitud">
-        <h3>Servicio: Mantenimiento</h3>
-        <p><strong>Descripción:</strong> lentitud equipo</p>
-        <p><strong>Estado:</strong> <span class="estado">Pendiente</span></p>
-        <p><strong>Fecha:</strong> 2025-05-24</p>
-    </div>
-
-    <div class="solicitud">
-        <h3>Servicio: Instalacion</h3>
-        <p><strong>Descripción:</strong> paquete oficce</p>
-        <p><strong>Estado:</strong> <span class="estado">En progreso</span></p>
-        <p><strong>Fecha:</strong> 2025-05-23</p>
-    </div>
-</div>
-
+    <div class="container mt-5">
+        <h2>Solicitudes Radicadas</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fecha</th>
+                    <th>Solicitante</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                    <th>Numero de radicado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí irían las filas de datos dinámicos -->
+                <tr>
+                    <td>1</td>
+                    <td>2025-05-24</td>
+                    <td>Juan Pérez</td>
+                    <td>Lentitud equipo</td>
+                    <td><span class="badge badge-warning">Pendiente</td>
+                    <td>000001</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2025-05-23</td>
+                    <td>Ana Gómez</td>
+                    <td>Paquete Office</td>
+                    <td><span class="badge badge-success">Resuelta</span></td>
+                    <td>000002</td>
+                </tr>
+            </tbody>
 </body>
 </html>

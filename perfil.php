@@ -49,8 +49,8 @@ session_start();
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="Solicitudes activas.html">Solicitudes activas</a></li>
-    <li><a href="Solicitudes radicadas.html">Solicitudes radicadas</a></li>
+    <li><a href="solicitudes activas.php">Solicitudes activas</a></li>
+    <li><a href="Solicitudes radicadas.php">Solicitudes radicadas</a></li>
     <li><a href="Permisos.php">Permisos</a></li>
     <div style="display: inline-block;"></div>
   </ul>

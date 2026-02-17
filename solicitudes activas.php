@@ -1,9 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Solicitudes Radicadas</title>
+  <title>Solicitudes Activas</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
@@ -171,12 +171,14 @@
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="solicitudes activas.html">Solicitudes activas</a></li>
+    <li><a href="Solicitudes r">Solicitudes Radicadas</a></li>
+    <li><a href="https://lookerstudio.google.com/reporting/93a1af02-1588-45f0-b785-a0eae496432c/page/PZvoF/edit">Dashboard Gráficas</a></li>
   </ul>
+  
 </nav>
 
 <div class="container-table">
-  <h2>Solicitudes Radicadas</h2>
+  <h2>Solicitudes Activas</h2>
   <table>
     <thead>
       <tr>
@@ -196,17 +198,15 @@
 <script>
   const tbody = document.getElementById('solicitudes-body');
 
-  function cargarSolicitudes() {
+  function cargarSolicitudesActivas() {
     const solicitudes = JSON.parse(localStorage.getItem('solicitudes')) || [];
+    // Filtrar solo las solicitudes con estado "en proceso"
+    const solicitudesActivas = solicitudes.filter(sol => sol.estado.toLowerCase() === 'en proceso');
     tbody.innerHTML = '';
 
-    solicitudes.forEach((sol, index) => {
-      let badgeClass = '';
-      switch(sol.estado.toLowerCase()) {
-        case 'resuelta': badgeClass = 'badge-success'; break;
-        case 'en proceso': badgeClass = 'badge-warning'; break;
-        default: badgeClass = '';
-      }
+    solicitudesActivas.forEach((sol, index) => {
+      const badgeClass = 'badge-warning';
+
       const tr = document.createElement('tr');
       tr.innerHTML = `
         <td>${index + 1}</td>
@@ -215,29 +215,30 @@
         <td>${sol.descripcion}</td>
         <td><span class="${badgeClass}">${sol.estado}</span></td>
         <td>${sol.numeroRadicado}</td>
-        <td><button class="btn-eliminar" data-index="${index}">Eliminar</button></td>
+        <td><button class="btn-eliminar" data-radicado="${sol.numeroRadicado}">Eliminar</button></td>
       `;
       tbody.appendChild(tr);
     });
 
-    // Añadir event listeners para eliminar después de renderizar filas
+    // Añadir event listeners para eliminar
     document.querySelectorAll('.btn-eliminar').forEach(button => {
       button.addEventListener('click', (e) => {
-        const index = e.target.getAttribute('data-index');
-        eliminarSolicitud(index);
+        const radicado = e.target.getAttribute('data-radicado');
+        eliminarSolicitud(radicado);
       });
     });
   }
 
-  function eliminarSolicitud(index) {
-    const solicitudes = JSON.parse(localStorage.getItem('solicitudes')) || [];
-    solicitudes.splice(index, 1);
+  function eliminarSolicitud(radicado) {
+    let solicitudes = JSON.parse(localStorage.getItem('solicitudes')) || [];
+    // Filtrar todas excepto la que tenga ese número de radicado
+    solicitudes = solicitudes.filter(sol => sol.numeroRadicado !== radicado);
     localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
-    cargarSolicitudes();
+    cargarSolicitudesActivas();
   }
 
-  // Cargar solicitudes al abrir la página
-  cargarSolicitudes();
+  // Cargar solicitudes activas al abrir la página
+  cargarSolicitudesActivas();
 </script>
 
 </body>
