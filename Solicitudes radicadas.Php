@@ -193,13 +193,11 @@
     <tbody id="solicitudes-body"></tbody>
   </table>
 </div>
-
 <script>
   const tbody = document.getElementById('solicitudes-body');
 
   function cargarSolicitudes() {
-    const solicitudes = JSON.parse(localStorage.getItem('solicitudes')) || [];
-    tbody.innerHTML = '';
+    
 
     solicitudes.forEach((sol, index) => {
       let badgeClass = '';

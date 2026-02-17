@@ -171,7 +171,7 @@
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="Solicitudes r">Solicitudes Radicadas</a></li>
+    <li><a href="Solicitudes radicadas.php">Solicitudes Radicadas</a></li>
     <li><a href="https://lookerstudio.google.com/reporting/93a1af02-1588-45f0-b785-a0eae496432c/page/PZvoF/edit">Dashboard Gráficas</a></li>
   </ul>
   
