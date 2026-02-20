@@ -1,5 +1,11 @@
 <?php
-include("../conexion.php");
+include("../config/conexion.php"); 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+    // Verificar que la conexión exista antes de usarla
+    if (!isset($conexion)) {
+        die("Error: La variable de conexión no está disponible.");
+    }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
