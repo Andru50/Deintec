@@ -49,8 +49,13 @@ session_start();
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
+<<<<<<< HEAD
     <li><a href="solicitudes activas.php">Solicitudes activas</a></li>
     <li><a href="Solicitudes radicadas.php">Solicitudes radicadas</a></li>
+=======
+    <li><a href="Solicitudes activas.html">Solicitudes activas</a></li>
+    <li><a href="Solicitudes radicadas.html">Solicitudes radicadas</a></li>
+>>>>>>> 93914b21691167136aa00177671941cf945dc29b
     <li><a href="Permisos.php">Permisos</a></li>
     <div style="display: inline-block;"></div>
   </ul>
