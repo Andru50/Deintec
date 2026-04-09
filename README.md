@@ -1,5 +1,6 @@
 🚀 Deintec - Portal de Servicios Tecnológicos
-Deintec es una plataforma web diseñada para centralizar y gestionar servicios de soporte técnico, diagnósticos de fallas de sistema y mantenimiento preventivo/correctivo. El proyecto busca ofrecer una interfaz intuitiva tanto para clientes como para proveedores de servicios de tecnología.
+Deintec es una plataforma web diseñada para centralizar y gestionar servicios de soporte técnico, diagnósticos de fallas de sistema y mantenimiento preventivo/correctivo. 
+El proyecto busca ofrecer una interfaz intuitiva tanto para clientes como para proveedores de servicios de tecnología.
 
 🛠️ Tecnologías Utilizadas
 Este proyecto utiliza un stack basado en tecnologías web estándar para garantizar rendimiento y compatibilidad:
