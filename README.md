@@ -9,7 +9,7 @@ Frontend: HTML5, CSS3 (Diseño responsivo).
 
 Backend: PHP (Arquitectura basada en controladores y modelos).
 
-Base de Datos: MySQL (Gestión de registros y usuarios).
+Base de Datos: MySQL, Docker (Gestión de registros y usuarios).
 
 Herramientas: Workspace de Visual Studio Code.
 
