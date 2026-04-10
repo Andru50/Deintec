@@ -2,90 +2,130 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+    <<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css" />
-    <title>Solicitud de reguistro</title>
+    <title>Catálogo de Servicios Tecnológicos - DEINTEC</title>
     <style>
+        /* Configuración General */
         body {
             font-family: Arial, sans-serif;
+            background-color: #000000;
+            background-image: url("app/imagenes/fondo.gif");
+            background-size: cover;
+            background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            background-image: url("imagen/fondo.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
+            color: white;
         }
 
-        h1 {
-            font-size: 3em;
+        /* Header y Navegación */
+        header{
+            /* Mantiene la forma circular si la imagen ya lo es, o ayuda a integrarla */
+            display: block;
+            margin: 0 auto;
             text-align: center;
         }
-
-        p {
-            font-size: 1.2rem;
-            line-height: 1.2;
+    
+        header img {
+            max-width: 300px;
+            height: auto;
         }
 
-        /* Estilos para el formulario de registro */
+        /* Barra de Navegación Secundaria */
+        .nav-menu {
+            background-color: #b30000; /* Rojo como en la imagen */
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 10;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        /* Estilos del Formulario de Registro */
         .registro-form {
-            max-width: 400px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95); /* Blanco ligeramente traslúcido */
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            color: #333;
         }
 
         .registro-form h2 {
-            text-align: center;
-            margin-bottom: 20px;
+            display: none; /* En la imagen no aparece el título "Crear Cuenta" arriba del form */
         }
 
         .registro-form input {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box; /* Asegura que el padding no desborde el input */
+            font-size: 0.9em;
         }
 
+        /* Estilo para los botones */
         .registro-form button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #007BFF;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            transition: background 0.3s;
         }
 
         .registro-form button:hover {
             background-color: #0056b3;
         }
+
+        /* Botón de instrucciones (Estilo secundario) */
+        .btn-audio {
+            background-color: #17a2b8 !important;
+        }
+
+        /* Ajuste para el input de archivo */
+        input[type="file"] {
+            background: #f8f9fa;
+            border: 1px dashed #ccc;
+        }
     </style>
 </head>
 
 <body>
-    <header style="text-align: center;">
-        <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
+    <header>
+        <img src="imagen/deintec-imagen.png" alt="Logo DEINTEC">
     </header>
 
-    <div id="nav-menu">
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Formulario de solicitud:</a></li>
-                <li><a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981">Ley de proteccion de datos:</a></li>
-            </ul>
-        </nav>
-            </ul>
-        </nav>
-    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Formulario de solicitud</a></li>
+            <li><a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981" target="_blank">Ley de protección de datos</a></li>
+        </ul>
+    </nav>
 
     <div class="registro-form">
-        <h2>Crear Cuenta</h2>
         <form action="controllers/reguistro usuario.php" method="post" enctype="multipart/form-data">
             <input type="text" name="nombre" placeholder="Nombre completo" required>
             <input type="text" name="cedula" placeholder="Cédula" required>
@@ -93,14 +133,25 @@
             <input type="password" name="password" placeholder="Contraseña" required>
             <input type="text" name="ubicacion" placeholder="Ubicación">
             <input type="text" name="telefono" placeholder="Teléfono">
+            
+            <label style="font-size: 0.8em; color: #666;">Foto de perfil:</label>
             <input type="file" name="imagen">
+            
             <button type="submit">Registrar</button>
 
-                <input placeholder="typeSomethig..." id=" "text />
-                <button onclick="speechSynthesis.speack(new SpeechSynthesisUtterance('Formulario de registro. Por favor ingrese su nombre completo, cédula, correo electrónico, contraseña, ubicación, teléfono y una imagen. Luego presione el botón registrar para completar su registro.'));">Escuchar instrucciones
-                </button>  
+            <input placeholder="typeSomething..." type="text" style="margin-top: 10px;" />
+            <button type="button" class="btn-audio" onclick="hablarInstrucciones()">Escuchar instrucciones</button>
         </form>
     </div>
+
+    <script>
+        function hablarInstrucciones() {
+            const mensaje = 'Formulario de registro. Por favor ingrese su nombre completo, cédula, correo electrónico, contraseña, ubicación, teléfono y una imagen. Luego presione el botón registrar para completar su registro.';
+            const utterance = new SpeechSynthesisUtterance(mensaje);
+            utterance.lang = 'es-ES';
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
 </body>
 
 </html>

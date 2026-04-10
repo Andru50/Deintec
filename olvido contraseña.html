@@ -3,89 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/estilos.css"/>
-    </head>
-    <title>olvido contraseña</title>
-        <style>
+    <title>Catálogo de Servicios Tecnológicos - DEINTEC</title>
+    <style>
+        /* Configuración General */
         body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f4f4f4; /* Si quieres un color de respaldo */
-          background-image: url("imagen/fondo.jpg"); /* La ruta desde el HTML */
-          background-size: cover;
-          background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            background-image: url("app/imagenes/fondo.gif");
+            background-size: cover;
+            background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            color: white;
         }
-      
-        h1 {
-          font-size: 3em;
-          text-align: center;
+
+        /* Header y Navegación */
+        header{
+            /* Mantiene la forma circular si la imagen ya lo es, o ayuda a integrarla */
+            display: block;
+            margin: 0 auto;
+            text-align: center;
         }
-      
-        p {
-          font-size: 1.2rem;
-          line-height: 1.2;
+
+        header img {
+            max-width: 300px;
+            height: auto;
         }
-        </style>
+
+        /* Navegación */
+        .nav-menu {
+            background-color: rgba(250, 4, 4, 0.8);
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 2px solid #b30000;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Contenedor de Recuperación (Estilo traslúcido) */
+        .recovery-box {
+            max-width: 500px;
+            margin: 40px auto;
+            background-color: rgba(20, 20, 20, 0.85); /* Fondo oscuro semitransparente */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #faf3f3;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+
+        /* Estilos del Formulario */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ddd;
+            font-size: 0.9em;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #444;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            box-sizing: border-box; /* Evita que el input se salga del cuadro */
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8em;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
     <header>
-        
-        <div style="text-align: center;">
-            <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
-        </div>
+        <img src="imagen/deintec-imagen.png" alt="Logo DEINTEC">
     </header>
-        <div id="menu">
-            
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                </ul>
-            </nav>
-        </div>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
     </nav>
 
-    <section>
+    <div class="recovery-box">
         <h2>Formulario de Recuperación</h2>
         <form action="procesar_recuperacion.php" method="POST">
-            <!-- Confirmación de segundo apellido -->
-            <h2 label for="segundo_apellido">Segundo Apellido:</label>
-            <input type="text" id="segundo_apellido" name="segundo_apellido" placeholder="Ingrese su segundo apellido" required>
-            <br><br>
+            
+            <div class="form-group">
+                <label for="segundo_apellido">Segundo Apellido:</label>
+                <input type="text" id="segundo_apellido" name="segundo_apellido" placeholder="Ingrese su segundo apellido" required>
+            </div>
 
-            <!-- Últimos números de teléfono -->
-            <label for="telefono">Últimos 4 dígitos de su Teléfono:</label>
-            <input type="text" id="telefono" name="telefono" placeholder="Ingrese los últimos 4 dígitos" maxlength="4" required>
-            <br><br>
+            <div class="form-group">
+                <label for="telefono">Últimos 4 dígitos de su Teléfono:</label>
+                <input type="text" id="telefono" name="telefono" placeholder="Ej: 1234" maxlength="4" required>
+            </div>
 
-            <!-- Nombre de mascota -->
-            <label for="mascota">Nombre de su Mascota:</label>
-            <input type="text" id="mascota" name="mascota" placeholder="Ingrese el nombre de su mascota" required>
-            <br><br>
+            <div class="form-group">
+                <label for="mascota">Nombre de su Mascota:</label>
+                <input type="text" id="mascota" name="mascota" placeholder="Nombre de su mascota" required>
+            </div>
 
-            <!-- Persona favorita -->
-            <label for="persona_favorita">Persona Favorita (Familiar o Amigo):</label>
-            <input type="text" id="persona_favorita" name="persona_favorita" placeholder="Ingrese el nombre de su persona favorita" required>
-            <br><br>
+            <div class="form-group">
+                <label for="persona_favorita">Persona Favorita (Familiar o Amigo):</label>
+                <input type="text" id="persona_favorita" name="persona_favorita" placeholder="Nombre de persona favorita" required>
+            </div>
 
-            <!-- Nueva contraseña -->
-            <label for="nueva_contrasena">Nueva Contraseña:</label>
-            <input type="password" id="nueva_contrasena" name="nueva_contrasena" placeholder="Ingrese su nueva contraseña" required>
-            <br><br>
+            <div class="form-group">
+                <label for="nueva_contrasena">Nueva Contraseña:</label>
+                <input type="password" id="nueva_contrasena" name="nueva_contrasena" placeholder="********" required>
+            </div>
 
-            <!-- Confirmación de nueva contraseña -->
-            <label for="confirmar_contrasena">Confirmar Nueva Contraseña:</label>
-            <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" placeholder="Confirme su nueva contraseña" required>
-            <br><br>
+            <div class="form-group">
+                <label for="confirmar_contrasena">Confirmar Nueva Contraseña:</label>
+                <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" placeholder="Confirme su contraseña" required>
+            </div>
 
-            <!-- Botón de recuperación -->
             <button type="submit">Recuperar Contraseña</button>
         </form>
-    </section>
+    </div>
+
     <footer>
+        <p>&copy; 2026 DEINTEC Servicios Tecnológicos. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
