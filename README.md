@@ -4,7 +4,7 @@ Deintec es una plataforma web diseñada para centralizar y gestionar servicios d
 El proyecto busca ofrecer una interfaz intuitiva tanto para clientes como para proveedores de servicios de tecnología.
 
 🛠️ Tecnologías Utilizadas
-
+```text
 Este proyecto utiliza un stack basado en tecnologías web estándar para garantizar rendimiento y compatibilidad:
 
 Frontend: HTML5, CSS3 (Diseño responsivo).
@@ -14,7 +14,7 @@ Backend: PHP (Arquitectura basada en controladores y modelos).
 Base de Datos: MySQL, Docker (Gestión de registros y usuarios).
 
 Herramientas: Workspace de Visual Studio Code.
-
+```
 📁 Estructura del Proyecto
 
 El repositorio está organizado siguiendo el patrón Modelo-Vista-Controlador (MVC) para facilitar la escalabilidad:
@@ -45,6 +45,7 @@ Deintec/
 ├── Permisos.php           # Panel de administración y roles
 ├── Ingresar.html          # Sistema de autenticación
 └── registro.html          # Formulario de nuevos usuarios
+```
 
 ⚙️ Instalación y Configuración
 
@@ -71,7 +72,7 @@ Acceso:
 Abre tu navegador y dirígete a http://localhost/Deintec/Ingresar.html.
 
 🛠️ Configuración y Conexión
-
+```text
 <?php
 // Configuración de credenciales
 $servidor    = "127.0.0.1";
@@ -92,7 +93,7 @@ $conexion->set_charset("utf8");
 
 // echo "✅ Conexión exitosa al sistema DEINTEC";
 ?>
-
+```
 📋 Funcionalidades Principales
 
 Módulo de Ingreso: Gestión de acceso seguro para usuarios.
