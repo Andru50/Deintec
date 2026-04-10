@@ -31,6 +31,21 @@ El repositorio está organizado siguiendo el patrón Modelo-Vista-Controlador (M
 
 /css, /js, /imagen: Recursos estáticos (estilos, scripts y multimedia).
 
+```text
+Deintec/
+├── app/
+│   └── imagenes/          # Recursos dinámicos y fondos (GIFs)
+├── css/
+│   └── estilos.css        # Hoja de estilos principal
+├── imagen/                # Activos estáticos, logotipos y fotos de equipo
+├── includes/              # (Sugerido) Scripts de lógica reutilizable
+├── js/                    # Funcionalidades interactivas (JavaScript)
+├── index.html             # Portal principal de bienvenida
+├── perfil.php             # Gestión de perfil de usuario
+├── Permisos.php           # Panel de administración y roles
+├── Ingresar.html          # Sistema de autenticación
+└── registro.html          # Formulario de nuevos usuarios
+
 ⚙️ Instalación y Configuración
 
 Para ejecutar este proyecto de forma local, sigue estos pasos:
@@ -54,6 +69,29 @@ Configura las credenciales de acceso en el archivo dentro de la carpeta /config.
 Acceso:
 
 Abre tu navegador y dirígete a http://localhost/Deintec/Ingresar.html.
+
+🛠️ Configuración y Conexión
+
+<?php
+// Configuración de credenciales
+$servidor    = "127.0.0.1";
+$usuario_db  = "deintec";
+$password_db = "12345";
+$nombre_db   = "deintec";
+
+// Crear la conexión usando la extensión mysqli
+$conexion = new mysqli($servidor, $usuario_db, $password_db, $nombre_db);
+
+// Validar estado de la conexión
+if ($conexion->connect_error) {
+    die("❌ Error crítico de conexión: " . $conexion->connect_error);
+}
+
+// Configurar set de caracteres a UTF-8 para evitar problemas con tildes y ñ
+$conexion->set_charset("utf8");
+
+// echo "✅ Conexión exitosa al sistema DEINTEC";
+?>
 
 📋 Funcionalidades Principales
 
