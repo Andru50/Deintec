@@ -155,6 +155,23 @@ session_start();
     </style>
 </head>
 
+<nav>
+  Perfil de usuario
+</nav>
+<div style="text-align: center;">
+  <img src="imagen/deintec-imagen.png" alt="" width="350" height="110">
+</div>
+</body>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Permisos.php">Permisos</a></li>
+    <div style="display: inline-block;"></div>
+  </ul>
+</nav>
+>>>>>>> 79d256cfa63f85da49f8a6198972a67c0eb6c2a4
+
 <body>
     <header>
         <img src="imagen/deintec-imagen.png" alt="Logo DEINTEC">

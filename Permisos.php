@@ -62,7 +62,10 @@
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
+<<<<<<< HEAD
             <li><a href="perfil.php">perfil</a></li>
+=======
+>>>>>>> 93914b21691167136aa00177671941cf945dc29b
             <li><a href="Permisos.php">Permisos</a></li>
         </ul>
     </nav>
