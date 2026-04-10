@@ -136,7 +136,6 @@
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="perfil.php">Perfil</a></li>
             <li><a href="Permisos.php">Permisos</a></li>
             <li><a href="solicitudes.php">Solicitudes</a></li>
         </ul>
